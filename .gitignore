@@ -1,0 +1,13 @@
+# Internal documentation - not for public access
+docs/
+
+# System files
+.DS_Store
+.claude/
+
+# IDE
+.vscode/
+.idea/
+
+# Node modules
+node_modules/
