@@ -44,7 +44,10 @@ The project introduces a **macroeconomic DAO** where traditional economic mechan
 │   └── docs/                         # Contract documentation
 ├── assets/                         # Auxiliary files
 │   └── pdf_style.css                # PDF styling
-└── archive/                        # Archived versions
+└── diagrams/                       # Professional SVG diagrams
+    ├── architecture/                # System architecture diagrams
+    ├── process/                     # Process flowcharts
+    └── conceptual/                  # Conceptual diagrams
 ```
 
 ## 🔑 Key Concepts

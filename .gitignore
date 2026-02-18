@@ -1,6 +1,9 @@
 # Internal documentation - not for public access
 docs/
 
+# Archive - not for public access
+archive/
+
 # System files
 .DS_Store
 .claude/
@@ -11,3 +14,12 @@ docs/
 
 # Node modules
 node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Temporary files
+*.log
+*.tmp
