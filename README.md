@@ -18,15 +18,22 @@ The project introduces a **macroeconomic DAO** where traditional economic mechan
 
 ## 📄 Main Documents
 
-- **CyberSocium_Foundation_RU.md** - Complete theoretical foundation in Russian (3300+ lines)
+### Russian Version (Русская версия)
+- **CyberSocium_Foundation_RU.md** - Complete theoretical foundation (3349 lines, 120 pages)
 - **CyberSocium_Foundation_RU.pdf** - PDF version for distribution
+
+### English Version
+- **CyberSocium_Foundation_EN.md** - Full English translation (3527 lines, 76 pages)
+- **CyberSocium_Foundation_EN.pdf** - PDF version for international community
 
 ## 📁 Repository Structure
 
 ```
 .
-├── CyberSocium_Foundation_RU.md    # Main theoretical document (MD)
-├── CyberSocium_Foundation_RU.pdf   # Main document (PDF)
+├── CyberSocium_Foundation_RU.md    # Main document in Russian (MD)
+├── CyberSocium_Foundation_RU.pdf   # Russian version (PDF)
+├── CyberSocium_Foundation_EN.md    # Main document in English (MD)
+├── CyberSocium_Foundation_EN.pdf   # English version (PDF)
 ├── legal/                          # DUNA legal documentation
 │   ├── ASSOCIATION_AGREEMENT.md      # Association charter
 │   ├── BRIFF.md                      # Legal brief
