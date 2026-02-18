@@ -402,7 +402,132 @@ where:
 
 **Historical Sequence of Phase Transitions:**
 
-![Evolution of Economic Organizational Forms](diagrams/conceptual/evolution_timeline.svg)
+```
+Phase 0 — Monarchical Centralization (before 18th century):
+  Ω₀ ≈ ⟨0.05, 0.05, 0.02, 0.10, 0.01⟩
+
+  Characteristic: Economic process management
+  concentrated in sovereign's hands. Trade guilds and
+  craft associations operate by crown privilege.
+  Transparency absent. Participation determined by estate.
+  Coordination — through direct orders and tradition.
+
+  Dominant form of economic unit:
+  manufactory, trading house, colonial company.
+
+Phase 1 — Parliamentary Capitalism (18th–19th centuries):
+  Ω₁ ≈ ⟨0.15, 0.15, 0.10, 0.20, 0.05⟩
+
+  Transition: δ(D) ≈ 0.10 — management functions passed
+  from monarch to parliament, representing interests
+  of broader economic forces.
+
+  Characteristic: Emergence of joint-stock company as
+  method of distributing risks and ownership. Birth
+  of corporate law. Stock exchange as mechanism of
+  capital coordination. However, participation limited
+  by property qualification; working class excluded
+  from management.
+
+  Dominant form: joint-stock company, bank.
+
+  Key theorists: Adam Smith [26], David Ricardo.
+
+Phase 2 — Corporate Capitalism (late 19th — mid-20th century):
+  Ω₂ ≈ ⟨0.15, 0.20, 0.15, 0.15, 0.10⟩
+
+  Transition: δ(C) ≈ 0.05 — emergence of management as
+  formalized discipline of coordination (Taylor, Ford).
+  δ(A) ≈ 0.05 — expansion of participation through mass
+  public securities markets.
+
+  Characteristic: Transnational corporations.
+  Separation of ownership from control (Berle and Means, 1932).
+  Managerial revolution. Keynesian
+  state regulation as compensation for
+  market failures.
+
+  Paradox: D doesn't grow, and in some aspects declines —
+  concentration of control in management hands with
+  dispersed shareholders.
+
+  Dominant form: public corporation, state
+  enterprise.
+
+Phase 3 — Financial Capitalism / Neoliberalism (1970s — 2008):
+  Ω₃ ≈ ⟨0.12, 0.18, 0.20, 0.12, 0.15⟩
+
+  Transition: δ(C) ≈ 0.05 — algorithmic trading,
+  derivatives, securitization.
+  δ(A) ≈ 0.05 — expansion of retail investing.
+  However: δ(D) < 0 — actual decline in
+  decentralization: financial conglomerates,
+  banking capital concentration, too big to fail.
+  δ(S) < 0 — decline in participant sovereignty:
+  growing dependence on financial intermediaries.
+
+  Characteristic: Economic hegemony of financial
+  sector. Globalization as strengthening of financial flows
+  without corresponding globalization of governance.
+  Result — 2008 crisis as systemic failure
+  of opaque, over-concentrated system.
+
+  Dominant form: investment bank, hedge fund,
+  financial conglomerate.
+
+  Critics: Stiglitz [9], Piketty [8], Minsky.
+
+Phase 4 — Platform Capitalism (2000s — present):
+  Ω₄ ≈ ⟨0.10, 0.15, 0.35, 0.08, 0.30⟩
+
+  Transition: δ(A) ≈ 0.15 — radical lowering of
+  participation barriers (anyone with a phone — user
+  and value generator).
+  δ(C) ≈ 0.15 — algorithmic coordination through
+  platforms (Uber, Airbnb, Amazon Marketplace).
+  However: δ(D) < 0 — catastrophic decline in
+  decentralization: GAFAM controls ~$10T+ market
+  capitalization, data of billions of people.
+  δ(S) < 0 — minimum sovereignty: user doesn't
+  own account, data, or algorithm.
+  δ(T) < 0 — decline in transparency: closed algorithms
+  for ranking, recommendations, pricing.
+
+  Paradox of Phase 4: maximum participation accessibility
+  with minimum sovereignty and minimum
+  decentralization. Billions of people involved in creating
+  value, but deprived of control over results
+  of their labor. This structural contradiction
+  is the driving force of transition to Phase 5.
+
+  Critics: Zuboff [6], Srnicek [7].
+
+  Dominant form: platform (Google, Meta, Amazon).
+
+Phase 5 — Declaration: CyberSocial Economics (forming):
+  Ω₅* ≈ ⟨0.85, 0.90, 0.90, 0.95, 0.85⟩  (target state)
+
+  Transition: Simultaneous jump of all components.
+  This is not incremental improvement of one parameter
+  (as in previous phases), but phase transition in
+  full sense — qualitative change in nature
+  of organizational form. AI (A8) is necessary
+  condition for this transition: D=0.85 requires
+  decentralized monitoring, T=0.90 — processing of
+  petabytes of data, C=0.85 — algorithmic coordination
+  of millions of participants. Without AI these target values
+  are unattainable.
+
+  Characteristic: CSC as dominant form
+  of economic unit. PMIP as mechanism
+  of financing. SES as mechanism of project selection.
+  MacroeconomicDAO as coordination instrument.
+
+  Marker: GyberExperiment as first empirical
+  realization.
+```
+
+> 📊 **Professional diagram version:** [View SVG](diagrams/conceptual/evolution_timeline.svg)
 
 *Figure 3.1: Evolution of economic organizational forms from Phase 0 (Monarchical Centralization) through Phase 5 (CyberSocial Economics). Each phase is characterized by a 5-dimensional vector Ω = ⟨D, T, A, S, C⟩ representing Decentralization, Transparency, Accessibility, Sovereignty, and Coordination. The timeline shows how these dimensions evolved from pre-18th century monarchical control (Ω₀ ≈ ⟨0.05, 0.05, 0.02, 0.10, 0.01⟩) through parliamentary capitalism, corporate capitalism, financial capitalism, and platform capitalism, culminating in the emerging CyberSocial Economics phase (Ω₅* ≈ ⟨0.85, 0.90, 0.90, 0.95, 0.85⟩). Note the paradox of Phase 4 (Platform Capitalism): maximum accessibility (A=0.35) coincides with minimum sovereignty (S=0.08) and declining decentralization (D=0.10), creating the structural contradiction driving transition to Phase 5.*
 
@@ -1142,7 +1267,51 @@ Sections 1–3 laid the theoretical foundation: identified the problem, formulat
 
 **System Architecture:**
 
-![GyberExperiment System Architecture](diagrams/architecture/system_architecture.svg)
+```
+                        ┌──────────────────────────────┐
+                        │      MacroeconomicDAO         │
+                        │  ┌────────┐  ┌────────┐      │
+                        │  │Social  │  │ Code   │      │
+                        │  │  DAO   │  │  DAO   │      │
+                        │  └────────┘  └────────┘      │
+                        │  ┌────────┐  ┌────────┐      │
+                        │  │Commerce│  │Economic│      │
+                        │  │  DAO   │  │  DAO   │      │
+                        │  └────────┘  └────────┘      │
+                        └──────────────┬───────────────┘
+                                      │ governance
+                        ┌─────────────▼────────────────┐
+                        │     GyberNet Blockchain       │
+                        │  (Security & Transparency)    │
+                        └─────────────┬────────────────┘
+                                      │ trust layer
+              ┌───────────────────────┼───────────────────────┐
+              │                       │                       │
+    ┌─────────▼───────────┐ ┌────────▼─────────┐ ┌───────────▼──────────┐
+    │  Gyber Social        │ │  GyberComputer   │ │  Gbr Token Economy   │
+    │  Platform (GSP)      │ │  (Distributed    │ │                      │
+    │                      │ │   Computing)     │ │ ┌──────────────────┐ │
+    │ ┌──────────────────┐ │ │                  │ │ │ UnitManager      │ │
+    │ │ Project Spaces   │ │ │ ┌──────────────┐ │ │ │ (BSC, Solidity)  │ │
+    │ │ Chat / Voice     │ │ │ │ AI Models    │ │ │ ├──────────────────┤ │
+    │ │ Video Hosting    │ │ │ │ (AiC Project)│ │ │ │ Project Liquidity│ │
+    │ │ File Sharing     │ │ │ │ Compute      │ │ │ │ Pools            │ │
+    │ │ G-Plan (Tasks)   │ │ │ │ Services     │ │ │ │ Staking Contracts│ │
+    │ │ Reputation       │ │ │ └──────────────┘ │ │ │ Reputation Oracle│ │
+    │ │ Shared Spaces    │ │ │                  │ │ └──────────────────┘ │
+    │ └──────────────────┘ │ │                  │ │                      │
+    └──────────────────────┘ └──────────────────┘ └──────────────────────┘
+              │                       │                       │
+              └───────────────────────┼───────────────────────┘
+                                      │ data layer
+                        ┌─────────────▼────────────────┐
+                        │           IPFS               │
+                        │  (Distributed File Storage)   │
+                        │  + Community Pinning Nodes     │
+                        └──────────────────────────────┘
+```
+
+> 📊 **Professional version:** [View SVG](diagrams/architecture/system_architecture.svg)
 
 *Figure 4.1: GyberExperiment layered architecture showing the governance layer (MacroeconomicDAO with four DAO classes), trust layer (GyberNet Blockchain), application layer (GSP, GyberComputer, Gbr Token Economy), and data layer (IPFS distributed storage).*
 
@@ -2402,7 +2571,40 @@ When inter-class conflicts arise, resolution follows a structured escalation pro
 2. **Joint proposal:** If informal coordination produces a solution, it is formalized as a joint proposal submitted for ratification to the relevant DAOs.
 3. **MacroeconomicDAO arbitration:** If informal coordination fails, the issue is escalated to MacroeconomicDAO for system-wide discussion and resolution.
 
-![DAO Inter-Class Interaction Model](diagrams/process/fork_resolution.svg)
+```
+Inter-class interaction model:
+
+  ┌─────────────────────────────────────────────┐
+  │          MacroeconomicDAO                    │
+  │      (meta-governance, arbitration)          │
+  └──────────────────┬──────────────────────────┘
+                     │
+        ┌────────────┼────────────┐
+        │            │            │
+  ┌─────▼─────┐ ┌───▼────┐ ┌────▼──────┐
+  │  Social   │ │  Code  │ │ Commerce  │
+  │   DAO     │◄┤  DAO   ├►│   DAO     │
+  │           │ │        │ │           │
+  └─────┬─────┘ └───┬────┘ └────┬──────┘
+        │            │           │
+        └────────────┼───────────┘
+                     │
+              ┌──────▼──────┐
+              │  Economic   │
+              │    DAO      │
+              │ (systemic   │
+              │  decisions) │
+              └─────────────┘
+
+  Interaction flows:
+    Social ↔ Code: technical decisions with social consequences
+    Social ↔ Commerce: marketing, engagement, social responsibility
+    Code ↔ Commerce: technical implementation of commercial products
+    Economic ↔ all: financing, resource allocation, monetary policy
+    MacroeconomicDAO → all: arbitration, strategic direction
+```
+
+> 📊 **Professional version:** [View SVG](diagrams/process/fork_resolution.svg)
 
 *Figure 5.1: Inter-class interaction model showing how the four DAO classes coordinate through MacroeconomicDAO. Arrows indicate interaction flows: Social ↔ Code (technical decisions with social consequences), Social ↔ Commerce (marketing, engagement), Code ↔ Commerce (technical implementation), Economic ↔ all (financing, resource allocation), and MacroeconomicDAO → all (arbitration, strategic direction).*
 
