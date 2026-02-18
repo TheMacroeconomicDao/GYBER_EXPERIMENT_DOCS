@@ -1,0 +1,86 @@
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#1e3a8a','primaryTextColor':'#fff','primaryBorderColor':'#3b82f6','lineColor':'#06b6d4','secondaryColor':'#0891b2','tertiaryColor':'#0e7490','fontSize':'14px'}}}%%
+graph TB
+    %% Traditional Corporation Column
+    subgraph Corp["<b>Traditional Corporation</b>"]
+        direction TB
+        CorpGov["<b>Governance</b><br/>Hierarchical Board<br/>Shareholder Primacy"]
+        CorpDec["<b>Decision Making</b><br/>Top-Down Mandates<br/>Executive Authority"]
+        CorpTrust["<b>Trust Model</b><br/>Legal Frameworks<br/>Regulatory Oversight"]
+        CorpTrans["<b>Transparency</b><br/>Limited Disclosure<br/>Quarterly Reports"]
+        CorpValue["<b>Value Flow</b><br/>Profit Maximization<br/>Dividend Distribution"]
+        CorpAdapt["<b>Adaptability</b><br/>Slow Bureaucratic<br/>Change Management"]
+        CorpScale["<b>Scalability</b><br/>Physical Infrastructure<br/>Linear Growth"]
+    end
+
+    %% DAO Column
+    subgraph DAO["<b>Decentralized Autonomous Organization</b>"]
+        direction TB
+        DAOGov["<b>Governance</b><br/>Token-Based Voting<br/>Flat Structure"]
+        DAODec["<b>Decision Making</b><br/>Proposal & Vote<br/>Community Consensus"]
+        DAOTrust["<b>Trust Model</b><br/>Smart Contracts<br/>Code as Law"]
+        DAOTrans["<b>Transparency</b><br/>On-Chain Visibility<br/>Real-Time Auditing"]
+        DAOValue["<b>Value Flow</b><br/>Token Economics<br/>Protocol Revenue"]
+        DAOAdapt["<b>Adaptability</b><br/>Proposal-Based<br/>Moderate Speed"]
+        DAOScale["<b>Scalability</b><br/>Digital Native<br/>Network Effects"]
+    end
+
+    %% CyberSocial Corporation Column
+    subgraph CSC["<b>CyberSocial Corporation (CSC)</b>"]
+        direction TB
+        CSCGov["<b>Governance</b><br/>Multi-Dimensional DAOs<br/>Collective Capacity"]
+        CSCDec["<b>Decision Making</b><br/>Context-Aware AI<br/>Adaptive Consensus"]
+        CSCTrust["<b>Trust Model</b><br/>Cryptographic + Social<br/>Reputation Systems"]
+        CSCTrans["<b>Transparency</b><br/>Selective Disclosure<br/>Privacy-Preserving"]
+        CSCValue["<b>Value Flow</b><br/>Multi-Capital Integration<br/>Ecosystem Synergy"]
+        CSCAdapt["<b>Adaptability</b><br/>AI-Augmented<br/>Real-Time Evolution"]
+        CSCScale["<b>Scalability</b><br/>Exponential Potential<br/>Cybernetic Loops"]
+    end
+
+    %% Dimension Labels
+    Dim1["Governance Model"]
+    Dim2["Decision Process"]
+    Dim3["Trust Mechanism"]
+    Dim4["Transparency"]
+    Dim5["Value Distribution"]
+    Dim6["Adaptability"]
+    Dim7["Scalability"]
+
+    %% Connect dimensions to forms
+    Dim1 -.-> CorpGov
+    Dim1 -.-> DAOGov
+    Dim1 -.-> CSCGov
+
+    Dim2 -.-> CorpDec
+    Dim2 -.-> DAODec
+    Dim2 -.-> CSCDec
+
+    Dim3 -.-> CorpTrust
+    Dim3 -.-> DAOTrust
+    Dim3 -.-> CSCTrust
+
+    Dim4 -.-> CorpTrans
+    Dim4 -.-> DAOTrans
+    Dim4 -.-> CSCTrans
+
+    Dim5 -.-> CorpValue
+    Dim5 -.-> DAOValue
+    Dim5 -.-> CSCValue
+
+    Dim6 -.-> CorpAdapt
+    Dim6 -.-> DAOAdapt
+    Dim6 -.-> CSCAdapt
+
+    Dim7 -.-> CorpScale
+    Dim7 -.-> DAOScale
+    Dim7 -.-> CSCScale
+
+    %% Styling
+    classDef corpStyle fill:#64748b,stroke:#475569,stroke-width:2px,color:#fff
+    classDef daoStyle fill:#0891b2,stroke:#06b6d4,stroke-width:2px,color:#fff
+    classDef cscStyle fill:#1e3a8a,stroke:#3b82f6,stroke-width:3px,color:#fff
+    classDef dimStyle fill:#0e7490,stroke:#14b8a6,stroke-width:2px,color:#fff
+
+    class CorpGov,CorpDec,CorpTrust,CorpTrans,CorpValue,CorpAdapt,CorpScale corpStyle
+    class DAOGov,DAODec,DAOTrust,DAOTrans,DAOValue,DAOAdapt,DAOScale daoStyle
+    class CSCGov,CSCDec,CSCTrust,CSCTrans,CSCValue,CSCAdapt,CSCScale cscStyle
+    class Dim1,Dim2,Dim3,Dim4,Dim5,Dim6,Dim7 dimStyle

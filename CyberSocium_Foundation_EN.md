@@ -366,33 +366,17 @@ Note the tension between A5 (meritocracy: vote weight by contribution) and A6 (i
 
 **Comparative Analysis of Organizational Forms:**
 
-```
-Characteristic      | Traditional     | DAO             | CSC
-                    | Corporation     | (existing)      | (CyberSocium)
-────────────────────┼─────────────────┼─────────────────┼──────────────────
-Ownership           | Shareholders    | Token holders   | All participants
-                    |                 |                 | (equal shares)
-────────────────────┼─────────────────┼─────────────────┼──────────────────
-Governance          | Board of        | Token-weighted  | Verified
-                    | Directors       | voting          | activity +
-                    |                 |                 | DAO
-────────────────────┼─────────────────┼─────────────────┼──────────────────
-Success Criterion   | Shareholder     | TVL / token     | Social
-                    | Profit          | price           | relevance
-────────────────────┼─────────────────┼─────────────────┼──────────────────
-Code                | Proprietary     | Partially       | Fully
-                    |                 | open            | open
-────────────────────┼─────────────────┼─────────────────┼──────────────────
-Entry Barrier       | Hiring /        | Token           | Participation
-                    | Stock Purchase  | Purchase        | (minimal)
-────────────────────┼─────────────────┼─────────────────┼──────────────────
-Scalability         | Hierarchical    | Limited         | PMIP
-                    |                 | (tokenholder    | scaling
-                    |                 | plutocracy)     |
-────────────────────┼─────────────────┼─────────────────┼──────────────────
-Crisis Resilience   | Depends on      | Depends on      | Antifragility
-                    | management      | token market    | (Claim 3)
-```
+| Characteristic | Traditional Corporation | DAO (existing) | CSC (CyberSocium) |
+|---|---|---|---|
+| **Ownership** | Shareholders | Token holders | All participants (equal shares) |
+| **Governance** | Board of Directors | Token-weighted voting | Verified activity + DAO |
+| **Success Criterion** | Shareholder Profit | TVL / token price | Social relevance |
+| **Code** | Proprietary | Partially open | Fully open |
+| **Entry Barrier** | Hiring / Stock Purchase | Token Purchase | Participation (minimal) |
+| **Scalability** | Hierarchical | Limited (tokenholder plutocracy) | PMIP scaling |
+| **Crisis Resilience** | Depends on management | Depends on token market | Antifragility (Claim 3) |
+
+*Table 3.1: Comparison of organizational forms across seven key dimensions, highlighting CSC's unique properties.*
 
 The substantial difference between CSC and existing DAOs requires separate explanation. Most contemporary DAOs — MakerDAO, Compound, Uniswap — use token-weighted voting, where vote weight is proportional to token quantity. This creates plutocracy: large holders determine decisions, while small holders are effectively disenfranchised. Vitalik Buterin has repeatedly pointed out this problem [46]. In CSC, vote weight is determined not by token quantity, but by **verified activity** — participation in projects, confirmed by the G-Plan system and higher-status participants. This implements the principle of meritocratic justice (A5) and prevents plutocratic degeneration.
 
@@ -418,130 +402,18 @@ where:
 
 **Historical Sequence of Phase Transitions:**
 
-```
-Phase 0 — Monarchical Centralization (before 18th century):
-  Ω₀ ≈ ⟨0.05, 0.05, 0.02, 0.10, 0.01⟩
+![Evolution of Economic Organizational Forms](diagrams/conceptual/evolution_timeline.svg)
 
-  Characteristic: Economic process management
-  concentrated in sovereign's hands. Trade guilds and
-  craft associations operate by crown privilege.
-  Transparency absent. Participation determined by estate.
-  Coordination — through direct orders and tradition.
+*Figure 3.1: Evolution of economic organizational forms from Phase 0 (Monarchical Centralization) through Phase 5 (CyberSocial Economics). Each phase is characterized by a 5-dimensional vector Ω = ⟨D, T, A, S, C⟩ representing Decentralization, Transparency, Accessibility, Sovereignty, and Coordination. The timeline shows how these dimensions evolved from pre-18th century monarchical control (Ω₀ ≈ ⟨0.05, 0.05, 0.02, 0.10, 0.01⟩) through parliamentary capitalism, corporate capitalism, financial capitalism, and platform capitalism, culminating in the emerging CyberSocial Economics phase (Ω₅* ≈ ⟨0.85, 0.90, 0.90, 0.95, 0.85⟩). Note the paradox of Phase 4 (Platform Capitalism): maximum accessibility (A=0.35) coincides with minimum sovereignty (S=0.08) and declining decentralization (D=0.10), creating the structural contradiction driving transition to Phase 5.*
 
-  Dominant form of economic unit:
-  manufactory, trading house, colonial company.
+**Key characteristics by phase:**
 
-Phase 1 — Parliamentary Capitalism (18th–19th centuries):
-  Ω₁ ≈ ⟨0.15, 0.15, 0.10, 0.20, 0.05⟩
-
-  Transition: δ(D) ≈ 0.10 — management functions passed
-  from monarch to parliament, representing interests
-  of broader economic forces.
-
-  Characteristic: Emergence of joint-stock company as
-  method of distributing risks and ownership. Birth
-  of corporate law. Stock exchange as mechanism of
-  capital coordination. However, participation limited
-  by property qualification; working class excluded
-  from management.
-
-  Dominant form: joint-stock company, bank.
-
-  Key theorists: Adam Smith [26], David Ricardo.
-
-Phase 2 — Corporate Capitalism (late 19th — mid-20th century):
-  Ω₂ ≈ ⟨0.15, 0.20, 0.15, 0.15, 0.10⟩
-
-  Transition: δ(C) ≈ 0.05 — emergence of management as
-  formalized discipline of coordination (Taylor, Ford).
-  δ(A) ≈ 0.05 — expansion of participation through mass
-  public securities markets.
-
-  Characteristic: Transnational corporations.
-  Separation of ownership from control (Berle and Means, 1932).
-  Managerial revolution. Keynesian
-  state regulation as compensation for
-  market failures.
-
-  Paradox: D doesn't grow, and in some aspects declines —
-  concentration of control in management hands with
-  dispersed shareholders.
-
-  Dominant form: public corporation, state
-  enterprise.
-
-Phase 3 — Financial Capitalism / Neoliberalism (1970s — 2008):
-  Ω₃ ≈ ⟨0.12, 0.18, 0.20, 0.12, 0.15⟩
-
-  Transition: δ(C) ≈ 0.05 — algorithmic trading,
-  derivatives, securitization.
-  δ(A) ≈ 0.05 — expansion of retail investing.
-  However: δ(D) < 0 — actual decline in
-  decentralization: financial conglomerates,
-  banking capital concentration, too big to fail.
-  δ(S) < 0 — decline in participant sovereignty:
-  growing dependence on financial intermediaries.
-
-  Characteristic: Economic hegemony of financial
-  sector. Globalization as strengthening of financial flows
-  without corresponding globalization of governance.
-  Result — 2008 crisis as systemic failure
-  of opaque, over-concentrated system.
-
-  Dominant form: investment bank, hedge fund,
-  financial conglomerate.
-
-  Critics: Stiglitz [9], Piketty [8], Minsky.
-
-Phase 4 — Platform Capitalism (2000s — present):
-  Ω₄ ≈ ⟨0.10, 0.15, 0.35, 0.08, 0.30⟩
-
-  Transition: δ(A) ≈ 0.15 — radical lowering of
-  participation barriers (anyone with a phone — user
-  and value generator).
-  δ(C) ≈ 0.15 — algorithmic coordination through
-  platforms (Uber, Airbnb, Amazon Marketplace).
-  However: δ(D) < 0 — catastrophic decline in
-  decentralization: GAFAM controls ~$10T+ market
-  capitalization, data of billions of people.
-  δ(S) < 0 — minimum sovereignty: user doesn't
-  own account, data, or algorithm.
-  δ(T) < 0 — decline in transparency: closed algorithms
-  for ranking, recommendations, pricing.
-
-  Paradox of Phase 4: maximum participation accessibility
-  with minimum sovereignty and minimum
-  decentralization. Billions of people involved in creating
-  value, but deprived of control over results
-  of their labor. This structural contradiction
-  is the driving force of transition to Phase 5.
-
-  Critics: Zuboff [6], Srnicek [7].
-
-  Dominant form: platform (Google, Meta, Amazon).
-
-Phase 5 — Declaration: CyberSocial Economics (forming):
-  Ω₅* ≈ ⟨0.85, 0.90, 0.90, 0.95, 0.85⟩  (target state)
-
-  Transition: Simultaneous jump of all components.
-  This is not incremental improvement of one parameter
-  (as in previous phases), but phase transition in
-  full sense — qualitative change in nature
-  of organizational form. AI (A8) is necessary
-  condition for this transition: D=0.85 requires
-  decentralized monitoring, T=0.90 — processing of
-  petabytes of data, C=0.85 — algorithmic coordination
-  of millions of participants. Without AI these target values
-  are unattainable.
-
-  Characteristic: CSC as dominant form
-  of economic unit. PMIP as mechanism
-  of financing. SES as mechanism of project selection.
-  MacroeconomicDAO as coordination instrument.
-
-  Marker: GyberExperiment as first empirical
-  realization.
-```
+- **Phase 0 (Monarchical, pre-18th c.):** Ω₀ ≈ ⟨0.05, 0.05, 0.02, 0.10, 0.01⟩ — Economic control concentrated in sovereign; guilds operate by crown privilege
+- **Phase 1 (Parliamentary, 18th-19th c.):** Ω₁ ≈ ⟨0.15, 0.15, 0.10, 0.20, 0.05⟩ — Joint-stock companies emerge; stock exchanges coordinate capital
+- **Phase 2 (Corporate, late 19th-mid 20th c.):** Ω₂ ≈ ⟨0.15, 0.20, 0.15, 0.15, 0.10⟩ — Transnational corporations; managerial revolution
+- **Phase 3 (Financial, 1970s-2008):** Ω₃ ≈ ⟨0.12, 0.18, 0.20, 0.12, 0.15⟩ — Financial hegemony; algorithmic trading; 2008 crisis
+- **Phase 4 (Platform, 2000s-present):** Ω₄ ≈ ⟨0.10, 0.15, 0.35, 0.08, 0.30⟩ — GAFAM dominance; mass participation with minimal sovereignty
+- **Phase 5 (CyberSocial, forming):** Ω₅* ≈ ⟨0.85, 0.90, 0.90, 0.95, 0.85⟩ — CSC as dominant form; PMIP financing; MacroeconomicDAO coordination; GyberExperiment as first empirical marker
 
 **Claim 3.3.1 (On Directionality of Evolution).** Historical sequence Ω₀ → Ω₁ → Ω₂ → Ω₃ → Ω₄ demonstrates general tendency toward growth of algorithmic coordination (C) and participation accessibility (A), but non-monotonic dynamics of decentralization (D), transparency (T) and sovereignty (S). Phases 3 and 4 are characterized by *regression* of D, T and S with growth of A and C, creating structural contradiction — mass participation with absence of control. This contradiction is the driving force of transition to Phase 5, where all five components simultaneously reach high values.
 
@@ -1264,77 +1136,15 @@ positive feedback are possible:
 
 Sections 1–3 laid the theoretical foundation: identified the problem, formulated axioms, introduced formal models of CSC, PMIP, SES, FRP, and described CyberSocium as a complex adaptive system. This section translates theory into architecture — describing how each theoretical construct is technically realized within GyberExperiment.
 
-```
-Theory                            →  Implementation
-─────────────────────────────────────────────────────────────────
-CyberSocium (CS)                  →  GyberExperiment (ecosystem)
-CyberSocial Corporation (CSC)     →  Gybernaty Community
-Axiom A1 (decentralization)       →  GyberNet (community blockchain)
-Axiom A2 (transparency)           →  Blockchain registry of all operations
-Axiom A3 (data sovereignty)       →  Client-side encryption, IPFS,
-                                     user-controlled keys
-Axiom A4 (extensibility)          →  Modular GSP architecture,
-                                     GitHub repository
-Axiom A5 (meritocracy)            →  G-Plan + UnitManager + status system
-Axiom A6 (inclusiveness)          →  Gbr liquidity pools
-                                     with all projects
-Axiom A7 (self-governance)        →  MacroeconomicDAO (4 DAO types)
-PMIP                              →  Economic DAO + Commerce DAO
-SES                               →  IPI pipeline + SIC formation
-                                     + FRP + reputation system
-IPI Model                         →  Project lifecycle in GSP
-Gbr token                         →  GyberCommunityToken (BSC)
-Agents (A)                        →  Verified wallets
-                                     with digital signatures
-Aggregate Resource (R)            →  Infrastructure + treasury
-                                     + codebase + reputation
-```
+![Theory to Implementation Mapping](diagrams/architecture/theory_implementation_map.svg)
 
-**High-level Diagram:**
+*Figure 4.2: Mapping of theoretical CyberSocium constructs to their technical implementations in GyberExperiment. Each axiom (A1-A7), principle (PMIP, SES), and theoretical element corresponds to specific infrastructure components and mechanisms.*
 
-```
-                    ┌──────────────────────────────┐
-                    │      MacroeconomicDAO         │
-                    │  ┌────────┐  ┌────────┐      │
-                    │  │Social  │  │ Code   │      │
-                    │  │  DAO   │  │  DAO   │      │
-                    │  └────────┘  └────────┘      │
-                    │  ┌────────┐  ┌────────┐      │
-                    │  │Commerce│  │Economic│      │
-                    │  │  DAO   │  │  DAO   │      │
-                    │  └────────┘  └────────┘      │
-                    └──────────────┬───────────────┘
-                                  │ governance
-                    ┌─────────────▼────────────────┐
-                    │     GyberNet Blockchain       │
-                    │  (Security & Transparency)    │
-                    └─────────────┬────────────────┘
-                                  │ trust layer
-          ┌───────────────────────┼───────────────────────┐
-          │                       │                       │
-┌─────────▼───────────┐ ┌────────▼─────────┐ ┌───────────▼──────────┐
-│  Gyber Social        │ │  GyberComputer   │ │  Gbr Token Economy   │
-│  Platform (GSP)      │ │  (Distributed    │ │                      │
-│                      │ │   Computing)     │ │ ┌──────────────────┐ │
-│ ┌──────────────────┐ │ │                  │ │ │ UnitManager      │ │
-│ │ Project Spaces   │ │ │ ┌──────────────┐ │ │ │ (BSC, Solidity)  │ │
-│ │ Chat / Voice     │ │ │ │ AI Models    │ │ │ ├──────────────────┤ │
-│ │ Video Hosting    │ │ │ │ (AiC Project)│ │ │ │ Project Liquidity│ │
-│ │ File Sharing     │ │ │ │ Compute      │ │ │ │ Pools            │ │
-│ │ G-Plan (Tasks)   │ │ │ │ Services     │ │ │ │ Staking Contracts│ │
-│ │ Reputation       │ │ │ └──────────────┘ │ │ │ Reputation Oracle│ │
-│ │ Shared Spaces    │ │ │                  │ │ └──────────────────┘ │
-│ └──────────────────┘ │ │                  │ │                      │
-└──────────────────────┘ └──────────────────┘ └──────────────────────┘
-          │                       │                       │
-          └───────────────────────┼───────────────────────┘
-                                  │ data layer
-                    ┌─────────────▼────────────────┐
-                    │           IPFS               │
-                    │  (Distributed File Storage)   │
-                    │  + Community Pinning Nodes     │
-                    └──────────────────────────────┘
-```
+**System Architecture:**
+
+![GyberExperiment System Architecture](diagrams/architecture/system_architecture.svg)
+
+*Figure 4.1: GyberExperiment layered architecture showing the governance layer (MacroeconomicDAO with four DAO classes), trust layer (GyberNet Blockchain), application layer (GSP, GyberComputer, Gbr Token Economy), and data layer (IPFS distributed storage).*
 
 ## 4.2. GyberCommunityToken (Gbr): Tokenomics
 
@@ -1415,57 +1225,17 @@ UnitManager is a smart contract implementing the RewardProtocol and serving as t
 
 **Reward payment algorithm:**
 
-```
-1. Fixed reward by Unit Type:
-   Each participant receives a fixed amount
-   determined by their status (Unit Type):
+![UnitManager Reward Flow](diagrams/process/unitmanager_rewards.svg)
 
-   — Unit (level 1):    10,000,000 Gbr / period
-   — Dev (level 2):     100,000,000 Gbr / period
-   — LeadDev (level 3): 1,000,000,000 Gbr / period
-   — ArchDev (level 4): 10,000,000,000 Gbr / period
+*Figure 4.4: UnitManager reward distribution process showing five steps: (1) Fixed reward by status level (Unit: 10M Gbr, Dev: 100M Gbr, LeadDev: 1B Gbr, ArchDev: 10B Gbr), (2) ×5 multiplier for project completion, (3) Activity confirmation via G-Plan, (4) Payment execution, and (5) On-chain recording for transparency.*
 
-   Reward is paid for confirmed
-   activity in the current period.
+**Key mechanisms:**
 
-2. Project completion bonus (×5 multiplier):
-   Upon verified completion of an IPI-model project
-   (transition to Operation phase), all project
-   team members receive a bonus:
-
-   reward_completion(aᵢ) = reward_base(statusᵢ) × 5
-
-   The ×5 multiplier creates a tremendous economic
-   incentive to finish what's started: a team that
-   brings a project to Operation receives in one period
-   as much as they would for five regular periods.
-   This solves the systemic problem of unfinished
-   projects — a plague of both open-source communities
-   and corporate innovation programs.
-
-3. Activity confirmation:
-   UnitManager queries G-Plan — an innovative
-   task manager developed by the community.
-
-   G-Plan confirms aᵢ's activity by checking:
-   — Participation in tasks during reporting period
-   — Task completion confirmed by participants
-     of higher status
-   — Overall level of involvement in ecosystem projects
-
-4. Payment:
-   If activity is confirmed:
-     UnitManager.transfer(walletᵢ, reward_amount)
-   If project is completed:
-     UnitManager.transfer(walletᵢ, reward_amount × 5)
-   If activity not confirmed:
-     Transaction rejected. Participant can
-     retry after accumulating activity.
-
-5. Recording:
-   All operations are recorded on BSC blockchain,
-   ensuring complete transparency and auditability.
-```
+1. **Fixed reward by Unit Type** — Each participant receives rewards based on their status level, paid for confirmed activity in the current period
+2. **Project completion bonus (×5 multiplier)** — Teams that bring a project to Operation phase receive 5× their base reward, creating tremendous incentive to complete projects
+3. **Activity confirmation** — UnitManager queries G-Plan to verify participation in tasks, task completion confirmed by higher-status participants, and overall involvement
+4. **Payment** — Automatic transfer upon confirmation, or rejection if activity not verified
+5. **Recording** — All operations recorded on BSC blockchain for complete transparency and auditability
 
 **Connection to theory.** UnitManager implements several axioms simultaneously:
 - A2 (transparency): all payments on blockchain, verifiable by anyone
@@ -1988,49 +1758,11 @@ AiC (*Artificial Intelligence Community*) is not a separate project among others
 
 This status fundamentally distinguishes AiC from external AI startups or isolated research labs. AiC is embedded in CSC architecture as its intellectual layer — like a nervous system is embedded in an organism rather than being a separate organ. Each GyberExperiment ecosystem component — GSP, G-Plan, MacroeconomicDAO, GyberComputer, GyberNet — is simultaneously a consumer and supplier of AI solutions.
 
-```
-AiC Position in CyberSocium Architecture:
+**AiC Position in CyberSocium Architecture:**
 
-                ┌─────────────────────────────────┐
-                │        AiC Department            │
-                │   (Artificial Intelligence       │
-                │    Community)                    │
-                │                                  │
-                │  ┌──────────┐  ┌──────────────┐ │
-                │  │ Research │  │  Applied AI   │ │
-                │  │   Lab    │  │  Engineering  │ │
-                │  └────┬─────┘  └──────┬───────┘ │
-                │       │               │         │
-                └───────┼───────────────┼─────────┘
-                        │               │
-      ┌─────────────────┼───────────────┼────────────────┐
-      │                 │               │                │
-      ▼                 ▼               ▼                ▼
-┌───────────┐    ┌───────────┐   ┌───────────┐    ┌───────────┐
-│   GSP     │    │  G-Plan   │   │  Macro-   │    │  Gyber-   │
-│           │    │           │   │  economic │    │  Computer │
-│ • Recom-  │    │ • Auto    │   │  DAO      │    │           │
-│   menda-  │    │   verifi- │   │           │    │ • Model   │
-│   tions   │    │   cation  │   │ • Proposal│    │   training│
-│ • Modera- │    │   of      │   │   analysis│    │ • Infer-  │
-│   tion    │    │   activity│   │ • Forecast│    │   ence    │
-│ • NLP for │    │ • Task    │   │   ing     │    │ • Distri- │
-│   chats   │    │   assess- │   │           │    │   buted   │
-│ • Search  │    │   ment    │   │           │    │   compute │
-│ • Trans-  │    │ • Task    │   │           │    │           │
-│   lation  │    │   assign- │   │           │    │           │
-│           │    │   ment    │   │           │    │           │
-└───────────┘    └───────────┘   └───────────┘    └───────────┘
-      │                 │               │                │
-      └─────────────────┼───────────────┼────────────────┘
-                        │               │
-                        ▼               ▼
-                ┌─────────────────────────────────┐
-                │      Open market                 │
-                │  AI products and services based  │
-                │  on AiC models                   │
-                └─────────────────────────────────┘
-```
+The AiC Department serves as the intellectual layer of the ecosystem, providing AI capabilities to all components (GSP, G-Plan, MacroeconomicDAO, GyberComputer) through two divisions: Research Lab and Applied AI Engineering. These capabilities also extend to the open market through commercial AI products and services.
+
+*See the full AiC architecture diagram at the end of this section.*
 
 ### 4.8.2. Problem AiC Solves
 
@@ -2367,36 +2099,15 @@ Financing sources:
      — Staking: 10 / [total AiC tokens] %
        of project revenue
 
-Revenue distribution:
+**Revenue distribution:**
 
-  ┌──────────────────────────────────────┐
-  │        AiC PROJECT REVENUE           │
-  ├──────────────────────────────────────┤
-  │                                      │
-  │  40% → AiC token holders             │
-  │        (SIC participants)            │
-  │                                      │
-  │  25% → Operating expenses            │
-  │        (infrastructure, GPU,         │
-  │         data storage)                │
-  │                                      │
-  │  20% → Research reinvestment         │
-  │        (Circuit 2 — AI science)      │
-  │                                      │
-  │  10% → Gybernaty treasury            │
-  │        (through Gbr LP)              │
-  │                                      │
-  │   5% → Staking rewards               │
-  │        (for AiC token stakers)       │
-  │                                      │
-  └──────────────────────────────────────┘
+- 40% → AiC token holders (SIC participants)
+- 25% → Operating expenses (infrastructure, GPU, data storage)
+- 20% → Research reinvestment (Circuit 2 — AI science)
+- 10% → Gybernaty treasury (through Gbr LP)
+- 5% → Staking rewards (for AiC token stakers)
 
-  Key mechanism: all revenue flows
-  through AiC/Gbr liquidity pool, which
-  ensures direct link between AiC
-  success and Gbr ecosystem value —
-  implementing Loop 2 (liquidity)
-  from project lifecycle model.
+**Key mechanism:** all revenue flows through AiC/Gbr liquidity pool, which ensures direct link between AiC success and Gbr ecosystem value — implementing Loop 2 (liquidity) from project lifecycle model.
 ```
 
 ### 4.8.7. CyberSocial Significance of AiC
@@ -2691,38 +2402,9 @@ When inter-class conflicts arise, resolution follows a structured escalation pro
 2. **Joint proposal:** If informal coordination produces a solution, it is formalized as a joint proposal submitted for ratification to the relevant DAOs.
 3. **MacroeconomicDAO arbitration:** If informal coordination fails, the issue is escalated to MacroeconomicDAO for system-wide discussion and resolution.
 
-```
-Inter-class interaction model:
+![DAO Inter-Class Interaction Model](diagrams/process/fork_resolution.svg)
 
-  ┌─────────────────────────────────────────────┐
-  │          MacroeconomicDAO                    │
-  │      (meta-governance, arbitration)          │
-  └──────────────────┬──────────────────────────┘
-                     │
-        ┌────────────┼────────────┐
-        │            │            │
-  ┌─────▼─────┐ ┌───▼────┐ ┌────▼──────┐
-  │  Social   │ │  Code  │ │ Commerce  │
-  │   DAO     │◄┤  DAO   ├►│   DAO     │
-  │           │ │        │ │           │
-  └─────┬─────┘ └───┬────┘ └────┬──────┘
-        │            │           │
-        └────────────┼───────────┘
-                     │
-              ┌──────▼──────┐
-              │  Economic   │
-              │    DAO      │
-              │ (systemic   │
-              │  decisions) │
-              └─────────────┘
-
-  Interaction flows:
-    Social ↔ Code: technical decisions with social consequences
-    Social ↔ Commerce: marketing, engagement, social responsibility
-    Code ↔ Commerce: technical implementation of commercial products
-    Economic ↔ all: financing, resource allocation, monetary policy
-    MacroeconomicDAO → all: arbitration, strategic direction
-```
+*Figure 5.1: Inter-class interaction model showing how the four DAO classes coordinate through MacroeconomicDAO. Arrows indicate interaction flows: Social ↔ Code (technical decisions with social consequences), Social ↔ Commerce (marketing, engagement), Code ↔ Commerce (technical implementation), Economic ↔ all (financing, resource allocation), and MacroeconomicDAO → all (arbitration, strategic direction).*
 
 ---
 

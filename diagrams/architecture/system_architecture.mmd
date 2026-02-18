@@ -1,0 +1,58 @@
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#1e3a8a','primaryTextColor':'#fff','primaryBorderColor':'#3b82f6','lineColor':'#06b6d4','secondaryColor':'#0891b2','tertiaryColor':'#0e7490','fontSize':'16px'}}}%%
+graph TB
+    %% Governance Layer
+    subgraph Governance["<b>Layer 1: Governance Layer</b><br/>MacroeconomicDAO"]
+        direction LR
+        SocialDAO["<b>Social DAO</b><br/>Community & Culture"]
+        CodeDAO["<b>Code DAO</b><br/>Technical Development"]
+        CommerceDAO["<b>Commerce DAO</b><br/>Economic Activity"]
+        EconomicDAO["<b>Economic DAO</b><br/>Resource Allocation"]
+    end
+
+    %% Trust Layer
+    subgraph Trust["<b>Layer 2: Trust Layer</b><br/>GyberNet Blockchain"]
+        direction TB
+        Security["<b>Security</b><br/>Cryptographic Verification"]
+        Transparency["<b>Transparency</b><br/>Public Ledger"]
+        Consensus["<b>Consensus</b><br/>BSC Network"]
+    end
+
+    %% Application Layer
+    subgraph Application["<b>Layer 3: Application Layer</b><br/>User-Facing Services"]
+        direction LR
+        GSP["<b>Gyber Social Platform</b><br/>Community Interaction"]
+        GyberComp["<b>GyberComputer</b><br/>Computational Resources"]
+        TokenEcon["<b>Gbr Token Economy</b><br/>Value Exchange"]
+    end
+
+    %% Data Layer
+    subgraph Data["<b>Layer 4: Data Layer</b><br/>Decentralized Storage"]
+        direction TB
+        IPFS["<b>IPFS Network</b><br/>Distributed Storage"]
+        Community["<b>Community Nodes</b><br/>Redundancy & Availability"]
+    end
+
+    %% Connections between layers
+    SocialDAO -.-> Security
+    CodeDAO -.-> Security
+    CommerceDAO -.-> Security
+    EconomicDAO -.-> Security
+
+    Security --> GSP
+    Transparency --> GyberComp
+    Consensus --> TokenEcon
+
+    GSP --> IPFS
+    GyberComp --> IPFS
+    TokenEcon --> Community
+
+    %% Styling
+    classDef govStyle fill:#1e3a8a,stroke:#3b82f6,stroke-width:3px,color:#fff
+    classDef trustStyle fill:#0891b2,stroke:#06b6d4,stroke-width:3px,color:#fff
+    classDef appStyle fill:#0e7490,stroke:#14b8a6,stroke-width:3px,color:#fff
+    classDef dataStyle fill:#065f46,stroke:#10b981,stroke-width:3px,color:#fff
+
+    class SocialDAO,CodeDAO,CommerceDAO,EconomicDAO govStyle
+    class Security,Transparency,Consensus trustStyle
+    class GSP,GyberComp,TokenEcon appStyle
+    class IPFS,Community dataStyle

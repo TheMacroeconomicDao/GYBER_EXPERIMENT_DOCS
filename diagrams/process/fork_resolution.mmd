@@ -1,0 +1,88 @@
+%% Fork Resolution Protocol (FRP) Flowchart
+%% Based on CyberSocium Mechanism for Resolving Internal Contradictions
+
+flowchart TD
+    Start([Internal Conflict<br/>Detected]) --> Type{Conflict<br/>Type}
+
+    Type -->|Technical| TechConflict[Technical Disagreement<br/>Implementation Approach]
+    Type -->|Strategic| StratConflict[Strategic Vision<br/>Divergence]
+    Type -->|Governance| GovConflict[Governance Policy<br/>Dispute]
+
+    TechConflict --> Deliberation
+    StratConflict --> Deliberation
+    GovConflict --> Deliberation
+
+    Deliberation[Deliberation Phase<br/>Structured Discussion<br/>14-21 days] --> Document[Document All<br/>Positions & Arguments]
+
+    Document --> Mediation[Community Mediation<br/>Neutral Facilitators]
+
+    Mediation --> Synthesis{Synthesis Phase<br/>Can Compromise<br/>Be Found?}
+
+    Synthesis -->|Yes| Compromise[Implement<br/>Compromise Solution]
+    Synthesis -->|Maybe| ExtendedNeg[Extended Negotiation<br/>7 days]
+    Synthesis -->|No| ForkDecision[Fork Decision<br/>Triggered]
+
+    ExtendedNeg --> SecondAttempt{Consensus<br/>Reached?}
+    SecondAttempt -->|Yes| Compromise
+    SecondAttempt -->|No| ForkDecision
+
+    Compromise --> Implement[Implementation<br/>Single Path Forward]
+    Implement --> Monitor[Monitor Satisfaction<br/>& Outcomes]
+    Monitor --> End([Conflict<br/>Resolved])
+
+    ForkDecision --> FormalVote[Formal Fork Vote<br/>Community Decision]
+    FormalVote --> VoteResult{Fork<br/>Approved?}
+
+    VoteResult -->|No| Reassess[Reassess Positions<br/>Return to Deliberation]
+    Reassess --> Deliberation
+
+    VoteResult -->|Yes| Fork[Fork Execution<br/>Split into Branches]
+
+    Fork --> BranchA[Branch A:<br/>Original Vision<br/>Initial Contributors]
+    Fork --> BranchB[Branch B:<br/>Alternative Vision<br/>Dissenting Group]
+
+    BranchA --> ResourceA[Resource Allocation A<br/>Proportional Split]
+    BranchB --> ResourceB[Resource Allocation B<br/>Proportional Split]
+
+    ResourceA --> SIC_A{SIC Forms<br/>in Branch A?}
+    ResourceB --> SIC_B{SIC Forms<br/>in Branch B?}
+
+    SIC_A -->|Yes| ViableA[Branch A Viable<br/>Continues Development]
+    SIC_A -->|No| FailA[Branch A Discontinued<br/>Insufficient Interest]
+
+    SIC_B -->|Yes| ViableB[Branch B Viable<br/>Continues Development]
+    SIC_B -->|No| FailB[Branch B Discontinued<br/>Insufficient Interest]
+
+    ViableA --> CoexistCheck{Both Branches<br/>Viable?}
+    ViableB --> CoexistCheck
+    FailA --> SingleBranch
+    FailB --> SingleBranch
+
+    CoexistCheck -->|Yes| Coexist[Both Branches Coexist<br/>Parallel Development]
+    CoexistCheck -->|No| SingleBranch[Single Branch<br/>Continues]
+
+    Coexist --> FutureEval[Future Evaluation<br/>Market/Community Decides]
+    SingleBranch --> FutureEval
+
+    FutureEval --> MergeCheck{Merge<br/>Opportunity?}
+
+    MergeCheck -->|Yes| Merge[Merge Branches<br/>Integrate Learnings]
+    MergeCheck -->|No| Continue[Continue<br/>Separate Paths]
+
+    Merge --> End
+    Continue --> End
+
+    %% Styling
+    classDef startEnd fill:#90EE90,stroke:#2E7D32,stroke-width:3px,color:#000
+    classDef process fill:#E3F2FD,stroke:#1976D2,stroke-width:2px,color:#000
+    classDef decision fill:#FFF3E0,stroke:#F57C00,stroke-width:2px,color:#000
+    classDef fork fill:#E1BEE7,stroke:#7B1FA2,stroke-width:3px,color:#000
+    classDef success fill:#C8E6C9,stroke:#388E3C,stroke-width:2px,color:#000
+    classDef fail fill:#FFCDD2,stroke:#C62828,stroke-width:2px,color:#000
+
+    class Start,End startEnd
+    class Deliberation,Document,Mediation,ExtendedNeg,Implement,Monitor,FormalVote,ResourceA,ResourceB,FutureEval process
+    class Type,Synthesis,SecondAttempt,VoteResult,SIC_A,SIC_B,CoexistCheck,MergeCheck decision
+    class Fork,ForkDecision,BranchA,BranchB fork
+    class Compromise,ViableA,ViableB,Coexist,Merge,Continue success
+    class Reassess,FailA,FailB,SingleBranch fail

@@ -1,0 +1,68 @@
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#1e3a8a','primaryTextColor':'#fff','primaryBorderColor':'#3b82f6','lineColor':'#06b6d4','secondaryColor':'#0891b2','tertiaryColor':'#0e7490','fontSize':'14px'}}}%%
+flowchart TD
+    %% Start
+    Start([<b>Participant Requests Reward</b><br/>via UnitManager Protocol]) --> CheckWallet{<b>Verify Wallet</b><br/>Is participant in NFC?}
+
+    %% Wallet Verification
+    CheckWallet -->|❌ Not Verified| RejectWallet[<b>Reject Request</b><br/>Reason: Not NFC Member]
+    CheckWallet -->|✅ Verified| CheckStatus{<b>Verify Status</b><br/>Valid GyberNet Status?}
+
+    %% Status Verification
+    CheckStatus -->|❌ Invalid| RejectStatus[<b>Reject Request</b><br/>Reason: Invalid Status]
+    CheckStatus -->|✅ Valid| CheckActivity{<b>G-Plan Activity Check</b><br/>Confirmed Activity?}
+
+    %% Activity Confirmation
+    CheckActivity -->|❌ No Activity| RejectActivity[<b>Reject Request</b><br/>Reason: No Confirmed Activity]
+    CheckActivity -->|✅ Activity Confirmed| DetermineStatus[<b>Determine Status Level</b>]
+
+    %% Status-Based Calculation
+    DetermineStatus --> StatusSwitch{<b>Status Type</b>}
+
+    StatusSwitch -->|Unit| CalcUnit[<b>Base Reward: 10,000,000 Gbr</b><br/>Entry Level Contributor]
+    StatusSwitch -->|Dev| CalcDev[<b>Base Reward: 100,000,000 Gbr</b><br/>Developer 10x multiplier]
+    StatusSwitch -->|LeadDev| CalcLead[<b>Base Reward: 1,000,000,000 Gbr</b><br/>Lead Developer 100x multiplier]
+    StatusSwitch -->|ArchDev| CalcArch[<b>Base Reward: 10,000,000,000 Gbr</b><br/>Architect Developer 1000x multiplier]
+    StatusSwitch -->|Core| CalcCore[<b>Community-Determined Reward</b><br/>DAO Governance Decision]
+
+    %% Merge to Project Check
+    CalcUnit --> CheckProject{<b>Project Status</b><br/>Is Project Completed?}
+    CalcDev --> CheckProject
+    CalcLead --> CheckProject
+    CalcArch --> CheckProject
+    CalcCore --> SpecialProcess[<b>Special DAO Process</b><br/>Core team follows different path]
+
+    %% Project Completion Bonus
+    CheckProject -->|❌ In Progress| BaseTransfer[<b>Transfer Base Reward</b><br/>No multiplier applied]
+    CheckProject -->|✅ Completed| ApplyMultiplier[<b>Apply ×5 Completion Bonus</b><br/>Enhanced Reward]
+
+    %% Transfer Stage
+    ApplyMultiplier --> EnhancedTransfer[<b>Transfer Enhanced Reward</b><br/>Base × 5]
+    BaseTransfer --> RecordBase[<b>Record to BSC Blockchain</b><br/>Transaction Hash + Timestamp]
+    EnhancedTransfer --> RecordEnhanced[<b>Record to BSC Blockchain</b><br/>Transaction Hash + Timestamp]
+    SpecialProcess --> RecordSpecial[<b>Record to BSC Blockchain</b><br/>DAO Decision + Transaction]
+
+    %% Update Records
+    RecordBase --> UpdateRep[<b>Update Reputation Score</b><br/>Contribution tracked on-chain]
+    RecordEnhanced --> UpdateRep
+    RecordSpecial --> UpdateRep
+
+    %% End States
+    UpdateRep --> Success([<b>✅ Reward Distributed</b><br/>Process Complete])
+    RejectWallet --> Failed([<b>❌ Request Rejected</b><br/>Process Terminated])
+    RejectStatus --> Failed
+    RejectActivity --> Failed
+
+    %% Styling
+    classDef startStyle fill:#10b981,stroke:#059669,stroke-width:3px,color:#fff
+    classDef rejectStyle fill:#ef4444,stroke:#dc2626,stroke-width:3px,color:#fff
+    classDef processStyle fill:#0891b2,stroke:#06b6d4,stroke-width:2px,color:#fff
+    classDef decisionStyle fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#000
+    classDef rewardStyle fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#fff
+    classDef successStyle fill:#10b981,stroke:#059669,stroke-width:3px,color:#fff
+
+    class Start startStyle
+    class RejectWallet,RejectStatus,RejectActivity,Failed rejectStyle
+    class DetermineStatus,BaseTransfer,EnhancedTransfer,SpecialProcess,RecordBase,RecordEnhanced,RecordSpecial,UpdateRep processStyle
+    class CheckWallet,CheckStatus,CheckActivity,StatusSwitch,CheckProject decisionStyle
+    class CalcUnit,CalcDev,CalcLead,CalcArch,CalcCore,ApplyMultiplier rewardStyle
+    class Success successStyle

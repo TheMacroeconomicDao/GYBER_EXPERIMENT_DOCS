@@ -1,0 +1,37 @@
+flowchart LR
+    subgraph Phase0["Phase 0: Monarchical (pre-18th)"]
+        O0["Ω₀ = ⟨0.05, 0.05, 0.02, 0.10, 0.01⟩<br/>Centralized Control<br/>Royal Monopolies"]
+    end
+
+    subgraph Phase1["Phase 1: Parliamentary (18-19th)"]
+        O1["Ω₁ = ⟨0.15, 0.15, 0.10, 0.20, 0.05⟩<br/>Joint-Stock Companies<br/>Banking & Exchanges"]
+    end
+
+    subgraph Phase2["Phase 2: Corporate (late 19-mid 20th)"]
+        O2["Ω₂ = ⟨0.15, 0.20, 0.15, 0.15, 0.10⟩<br/>Managerial Revolution<br/>Mass Production"]
+    end
+
+    subgraph Phase3["Phase 3: Financial (1970-2008)"]
+        O3["Ω₃ = ⟨0.12, 0.18, 0.20, 0.12, 0.15⟩<br/>Market Hegemony<br/>Globalization"]
+    end
+
+    subgraph Phase4["Phase 4: Platform (2000s-present)"]
+        O4["Ω₄ = ⟨0.10, 0.15, 0.35, 0.08, 0.30⟩<br/>Digital Platforms<br/>Network Effects"]
+    end
+
+    subgraph Phase5["Phase 5: CyberSocial (forming)"]
+        O5["Ω₅ = ⟨0.85, 0.90, 0.90, 0.95, 0.85⟩<br/>CSC & DAO<br/>Collective Capacity"]
+    end
+
+    Phase0 ==> Phase1
+    Phase1 ==> Phase2
+    Phase2 ==> Phase3
+    Phase3 ==> Phase4
+    Phase4 ==> Phase5
+
+    style Phase0 fill:#FFF3E0,stroke:#F57C00,stroke-width:2px
+    style Phase1 fill:#E3F2FD,stroke:#1976D2,stroke-width:2px
+    style Phase2 fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px
+    style Phase3 fill:#E8F5E9,stroke:#388E3C,stroke-width:2px
+    style Phase4 fill:#FCE4EC,stroke:#C2185B,stroke-width:2px
+    style Phase5 fill:#C8E6C9,stroke:#2E7D32,stroke-width:3px
