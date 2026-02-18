@@ -41,7 +41,7 @@
 
 ## 🤝 Участие в проекте
 
-**Мы приветствуем вклад от всех членов сообщества!**
+**Gybernaty Community приветствует вклад от всех участников!**
 
 - 📝 [Руководство по участию](CONTRIBUTING.md)
 - 💬 [Обсуждения](https://github.com/TheMacroeconomicDao/GYBER_EXPERIMENT_DOCS/discussions)
@@ -68,8 +68,9 @@
 - Smart Contracts: Solidity
 - Testing: Hardhat, Vitest
 
-## 🌟 Сообщество
+## 🌟 Gybernaty Community
 
 - **GitHub**: [TheMacroeconomicDao/GYBER_EXPERIMENT_DOCS](https://github.com/TheMacroeconomicDao/GYBER_EXPERIMENT_DOCS)
 - **Discussions**: Присоединяйтесь к обсуждениям концепции
+- **Community**: Gybernaty Community - открытое сообщество участников проекта
 - **Topics**: `cybersocium`, `dao`, `macroeconomics`, `blockchain`, `bsc`, `defi`
