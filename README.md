@@ -27,12 +27,6 @@ The project introduces a **macroeconomic DAO** where traditional economic mechan
 .
 ├── CyberSocium_Foundation_RU.md    # Main theoretical document (MD)
 ├── CyberSocium_Foundation_RU.pdf   # Main document (PDF)
-├── docs/                           # Additional documentation
-│   ├── AI_CONCEPTUAL_INTEGRATION.md  # AI integration concepts
-│   ├── AI_INTEGRATION_RESEARCH.md    # AI research
-│   ├── CRITICAL_AUDIT.md             # Critical audit report
-│   ├── DUNA.md                       # Legal framework
-│   └── PROMT.md                      # Prompts and guidelines
 ├── legal/                          # DUNA legal documentation
 │   ├── ASSOCIATION_AGREEMENT.md      # Association charter
 │   ├── BRIFF.md                      # Legal brief
