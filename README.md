@@ -39,9 +39,27 @@
 - **DUNA** - Децентрализованная Некоммерческая Ассоциация
 - **A8 (AI Augmentation)** - интеграция искусственного интеллекта
 
+## 🤝 Участие в проекте
+
+**Мы приветствуем вклад от всех членов сообщества!**
+
+- 📝 [Руководство по участию](CONTRIBUTING.md)
+- 💬 [Обсуждения](https://github.com/TheMacroeconomicDao/GYBER_EXPERIMENT_DOCS/discussions)
+- 🐛 [Issues](https://github.com/TheMacroeconomicDao/GYBER_EXPERIMENT_DOCS/issues)
+- 📚 [Wiki](https://github.com/TheMacroeconomicDao/GYBER_EXPERIMENT_DOCS/wiki)
+
+### Быстрый старт для участников
+
+1. Fork репозитория
+2. Создайте ветку для изменений
+3. Внесите изменения
+4. Создайте Pull Request
+
+Подробнее см. [CONTRIBUTING.md](CONTRIBUTING.md)
+
 ## 📜 Лицензия
 
-AGPL-3.0 License
+[AGPL-3.0 License](LICENSE) - все вклады автоматически лицензируются аналогично
 
 ## 🔗 Технологии
 
@@ -49,3 +67,9 @@ AGPL-3.0 License
 - Token Standard: BEP-20
 - Smart Contracts: Solidity
 - Testing: Hardhat, Vitest
+
+## 🌟 Сообщество
+
+- **GitHub**: [TheMacroeconomicDao/GYBER_EXPERIMENT_DOCS](https://github.com/TheMacroeconomicDao/GYBER_EXPERIMENT_DOCS)
+- **Discussions**: Присоединяйтесь к обсуждениям концепции
+- **Topics**: `cybersocium`, `dao`, `macroeconomics`, `blockchain`, `bsc`, `defi`
