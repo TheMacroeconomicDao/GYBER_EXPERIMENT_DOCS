@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="50%" style="stop-color:#161b22"/>
+      <stop offset="100%" style="stop-color:#0d1117"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c4dff"/>
+      <stop offset="100%" style="stop-color:#00e5ff"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c4dff;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#00e5ff;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bg)"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.05">
+    <line x1="0" y1="0" x2="1280" y2="640" stroke="#7c4dff" stroke-width="0.5"/>
+    <line x1="0" y1="640" x2="1280" y2="0" stroke="#00e5ff" stroke-width="0.5"/>
+    <line x1="640" y1="0" x2="640" y2="640" stroke="#7c4dff" stroke-width="0.5"/>
+    <line x1="0" y1="320" x2="1280" y2="320" stroke="#00e5ff" stroke-width="0.5"/>
+  </g>
+
+  <!-- Decorative circles -->
+  <circle cx="200" cy="320" r="200" fill="url(#glow)" opacity="0.4"/>
+  <circle cx="1080" cy="320" r="250" fill="url(#glow)" opacity="0.3"/>
+
+  <!-- Hexagon network pattern -->
+  <g opacity="0.08" stroke="#7c4dff" stroke-width="1" fill="none">
+    <polygon points="100,100 140,80 180,100 180,140 140,160 100,140"/>
+    <polygon points="180,100 220,80 260,100 260,140 220,160 180,140"/>
+    <polygon points="140,160 180,140 220,160 220,200 180,220 140,200"/>
+    <polygon points="1000,400 1040,380 1080,400 1080,440 1040,460 1000,440"/>
+    <polygon points="1080,400 1120,380 1160,400 1160,440 1120,460 1080,440"/>
+    <polygon points="1040,460 1080,440 1120,460 1120,500 1080,520 1040,500"/>
+    <polygon points="1120,460 1160,440 1200,460 1200,500 1160,520 1120,500"/>
+  </g>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1280" height="3" fill="url(#accent)"/>
+
+  <!-- Main title -->
+  <text x="640" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="-1">
+    CyberSocium Foundation
+  </text>
+
+  <!-- Subtitle -->
+  <text x="640" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#8b949e" text-anchor="middle" letter-spacing="0.5">
+    Theoretical Foundations of CyberSocial Economics
+  </text>
+
+  <!-- Divider -->
+  <rect x="540" y="310" width="200" height="2" fill="url(#accent)" rx="1"/>
+
+  <!-- Tags -->
+  <g font-family="system-ui, -apple-system, sans-serif" font-size="16">
+    <rect x="280" y="350" width="120" height="32" rx="16" fill="#7c4dff" opacity="0.2"/>
+    <text x="340" y="371" fill="#7c4dff" text-anchor="middle">12 Axioms</text>
+
+    <rect x="420" y="350" width="80" height="32" rx="16" fill="#7c4dff" opacity="0.2"/>
+    <text x="460" y="371" fill="#7c4dff" text-anchor="middle">DAO</text>
+
+    <rect x="520" y="350" width="110" height="32" rx="16" fill="#00e5ff" opacity="0.2"/>
+    <text x="575" y="371" fill="#00e5ff" text-anchor="middle">Solidity</text>
+
+    <rect x="650" y="350" width="80" height="32" rx="16" fill="#00e5ff" opacity="0.2"/>
+    <text x="690" y="371" fill="#00e5ff" text-anchor="middle">BSC</text>
+
+    <rect x="750" y="350" width="100" height="32" rx="16" fill="#7c4dff" opacity="0.2"/>
+    <text x="800" y="371" fill="#7c4dff" text-anchor="middle">DUNA</text>
+
+    <rect x="870" y="350" width="130" height="32" rx="16" fill="#00e5ff" opacity="0.2"/>
+    <text x="935" y="371" fill="#00e5ff" text-anchor="middle">AI-Augmented</text>
+  </g>
+
+  <!-- Quote -->
+  <text x="640" y="440" font-family="Georgia, serif" font-size="16" fill="#8b949e" text-anchor="middle" font-style="italic">
+    "With a sufficient number of participants, even minimal individual contribution
+  </text>
+  <text x="640" y="465" font-family="Georgia, serif" font-size="16" fill="#8b949e" text-anchor="middle" font-style="italic">
+    enables implementation of projects of arbitrary scale."
+  </text>
+
+  <!-- Bottom info -->
+  <text x="640" y="540" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#58a6ff" text-anchor="middle">
+    themacroeconomicdao.github.io/GYBER_EXPERIMENT_DOCS
+  </text>
+
+  <!-- GitHub org -->
+  <text x="640" y="580" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#484f58" text-anchor="middle">
+    TheMacroeconomicDao  /  Gybernaty Community  /  AGPL-3.0
+  </text>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="637" width="1280" height="3" fill="url(#accent)"/>
+</svg>
