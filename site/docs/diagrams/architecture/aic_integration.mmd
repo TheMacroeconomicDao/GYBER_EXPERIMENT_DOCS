@@ -1,0 +1,103 @@
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#1e3a8a','primaryTextColor':'#fff','primaryBorderColor':'#3b82f6','lineColor':'#06b6d4','secondaryColor':'#0891b2','tertiaryColor':'#0e7490','fontSize':'14px'}}}%%
+graph TB
+    %% Application Layer
+    subgraph Apps["<b>Application Layer</b><br/>User-Facing Services"]
+        direction LR
+        GSP["<b>Gyber Social Platform</b><br/>Community & Interaction"]
+        GC["<b>GyberComputer</b><br/>Computational Services"]
+        Market["<b>Marketplace</b><br/>Commerce & Exchange"]
+        Gov["<b>Governance Tools</b><br/>DAO Participation"]
+    end
+
+    %% AiC Infrastructure Layer (Horizontal)
+    subgraph AiC["<b>AI Collective (AiC) Infrastructure Layer</b><br/>Horizontal AI Services"]
+        direction LR
+
+        subgraph Internal["<b>Internal Circuit</b><br/>Organization Support"]
+            direction TB
+            IntOps["AI Operations<br/>Process Automation"]
+            IntGov["AI Governance<br/>Decision Support"]
+            IntSec["AI Security<br/>Threat Detection"]
+        end
+
+        subgraph Research["<b>Research Circuit</b><br/>Innovation & Development"]
+            direction TB
+            ResML["Machine Learning<br/>Model Training"]
+            ResData["Data Analysis<br/>Pattern Discovery"]
+            ResExp["Experimentation<br/>A/B Testing"]
+        end
+
+        subgraph Commercial["<b>Commercial Circuit</b><br/>External Services"]
+            direction TB
+            ComAPI["API Services<br/>Third-Party Access"]
+            ComModel["Model Marketplace<br/>AI Product Sales"]
+            ComCons["Consulting<br/>Custom Solutions"]
+        end
+    end
+
+    %% Foundation Layer
+    subgraph Foundation["<b>Foundation Layer</b><br/>Core Infrastructure"]
+        direction LR
+        Blockchain["<b>GyberNet Blockchain</b><br/>Trust & Consensus"]
+        Storage["<b>IPFS Network</b><br/>Distributed Storage"]
+        Compute["<b>Compute Grid</b><br/>Processing Power"]
+        Identity["<b>Identity System</b><br/>Authentication"]
+    end
+
+    %% Data Sources
+    subgraph Data["<b>Data Sources</b>"]
+        direction LR
+        UserData["User Behavior<br/>Interaction Patterns"]
+        NetworkData["Network State<br/>System Metrics"]
+        ExternalData["External APIs<br/>Market Data"]
+    end
+
+    %% Connections: Applications to AiC
+    GSP --> Internal
+    GSP --> Research
+    GC --> Internal
+    GC --> Research
+    Market --> Commercial
+    Market --> Research
+    Gov --> Internal
+    Gov --> Research
+
+    %% Connections: AiC Circuits Integration
+    Internal <-.-> Research
+    Research <-.-> Commercial
+    Internal <-.-> Commercial
+
+    %% Connections: AiC to Foundation
+    IntOps --> Blockchain
+    IntGov --> Blockchain
+    IntSec --> Blockchain
+    ResML --> Compute
+    ResData --> Storage
+    ResExp --> Storage
+    ComAPI --> Blockchain
+    ComModel --> Storage
+    ComCons --> Compute
+
+    %% Connections: Data to AiC
+    UserData -.-> Research
+    UserData -.-> Internal
+    NetworkData -.-> Internal
+    ExternalData -.-> Research
+    ExternalData -.-> Commercial
+
+    %% Feedback Loops
+    Research -.->|Model Updates| Apps
+    Commercial -.->|Revenue| Foundation
+    Internal -.->|Optimization| Apps
+
+    %% Styling
+    classDef appStyle fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#fff
+    classDef aicStyle fill:#0891b2,stroke:#06b6d4,stroke-width:3px,color:#fff
+    classDef foundStyle fill:#0e7490,stroke:#14b8a6,stroke-width:2px,color:#fff
+    classDef dataStyle fill:#065f46,stroke:#10b981,stroke-width:2px,color:#fff
+    classDef circuitStyle fill:#0c4a6e,stroke:#0284c7,stroke-width:2px,color:#fff
+
+    class GSP,GC,Market,Gov appStyle
+    class IntOps,IntGov,IntSec,ResML,ResData,ResExp,ComAPI,ComModel,ComCons circuitStyle
+    class Blockchain,Storage,Compute,Identity foundStyle
+    class UserData,NetworkData,ExternalData dataStyle

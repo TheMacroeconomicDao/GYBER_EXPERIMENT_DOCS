@@ -1,0 +1,15 @@
+flowchart TD
+    Start([Proposal Submitted]) --> Discussion[Discussion Phase<br/>7-14 days]
+    Discussion --> Voting[DAO Voting<br/>Token-Weighted]
+    Voting --> VoteCheck{Vote Result}
+    VoteCheck -->|Rejected| Reject[Proposal Rejected]
+    VoteCheck -->|Approved| Execution[Execution Phase]
+    Execution --> ExecType{Type}
+    ExecType -->|Contract| Auto[Auto Execute]
+    ExecType -->|Treasury| Treasury[Treasury Release]
+    ExecType -->|Project| Project[IPI Pipeline]
+    Auto --> Record[Blockchain Record]
+    Treasury --> Record
+    Project --> Record
+    Record --> End([Complete])
+    Reject --> End

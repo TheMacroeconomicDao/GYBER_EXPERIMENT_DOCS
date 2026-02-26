@@ -1,0 +1,154 @@
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#1e3a8a','primaryTextColor':'#fff','primaryBorderColor':'#3b82f6','lineColor':'#06b6d4','secondaryColor':'#0891b2','tertiaryColor':'#0e7490','fontSize':'14px'}}}%%
+graph TB
+    %% Application Integration Layer
+    subgraph AppInt["<b>Tier 3: Application Integration</b><br/>Consumer Interfaces"]
+        direction LR
+
+        subgraph AppAPIs["Application APIs"]
+            direction TB
+            SocialAPI["Social Platform API<br/>User Interaction"]
+            ComputeAPI["Compute API<br/>Resource Management"]
+            GovAPI["Governance API<br/>DAO Operations"]
+            MarketAPI["Marketplace API<br/>Commerce Functions"]
+        end
+
+        subgraph AppSDK["Developer Tools"]
+            direction TB
+            SDK["SDK Libraries<br/>Python, JS, Rust"]
+            CLI["CLI Tools<br/>Command Interface"]
+            Docs["Documentation<br/>Integration Guides"]
+        end
+    end
+
+    %% Service Layer
+    subgraph Service["<b>Tier 2: Service Layer</b><br/>AI Capabilities & Business Logic"]
+        direction LR
+
+        subgraph NLP["Natural Language"]
+            direction TB
+            TextGen["Text Generation<br/>GPT-based Models"]
+            Translation["Translation<br/>Multi-language"]
+            Sentiment["Sentiment Analysis<br/>Emotion Detection"]
+        end
+
+        subgraph Vision["Computer Vision"]
+            direction TB
+            ImgClass["Image Classification<br/>Object Recognition"]
+            ImgGen["Image Generation<br/>Diffusion Models"]
+            ImgSeg["Image Segmentation<br/>Scene Analysis"]
+        end
+
+        subgraph Analytics["Data Analytics"]
+            direction TB
+            Predict["Predictive Models<br/>Forecasting"]
+            Anomaly["Anomaly Detection<br/>Security Monitoring"]
+            Recommend["Recommendation<br/>Personalization"]
+        end
+
+        subgraph Reasoning["AI Reasoning"]
+            direction TB
+            Planning["Task Planning<br/>Workflow Optimization"]
+            DecSupport["Decision Support<br/>Multi-criteria Analysis"]
+            KnowGraph["Knowledge Graphs<br/>Semantic Networks"]
+        end
+    end
+
+    %% Core Layer
+    subgraph Core["<b>Tier 1: AiC Core Infrastructure</b><br/>Foundation Services"]
+        direction LR
+
+        subgraph ModelMgmt["Model Management"]
+            direction TB
+            Registry["Model Registry<br/>Version Control"]
+            Training["Training Pipeline<br/>Distributed Learning"]
+            Deployment["Model Deployment<br/>A/B Testing"]
+        end
+
+        subgraph DataMgmt["Data Management"]
+            direction TB
+            Ingest["Data Ingestion<br/>ETL Pipelines"]
+            Quality["Data Quality<br/>Validation & Cleaning"]
+            Privacy["Privacy Layer<br/>Anonymization"]
+        end
+
+        subgraph Compute["Compute Resources"]
+            direction TB
+            GPUPool["GPU Cluster<br/>Tensor Processing"]
+            Scheduler["Job Scheduler<br/>Resource Allocation"]
+            Monitor["Monitoring<br/>Performance Metrics"]
+        end
+
+        subgraph Security["Security & Trust"]
+            direction TB
+            AuthZ["Authorization<br/>Access Control"]
+            Audit["Audit Logging<br/>Compliance Tracking"]
+            Encrypt["Encryption<br/>Data Protection"]
+        end
+    end
+
+    %% External Integration
+    subgraph External["<b>External Systems</b>"]
+        direction LR
+        Blockchain["GyberNet Blockchain<br/>Trust Anchor"]
+        IPFS["IPFS Storage<br/>Data Persistence"]
+        Oracle["External Oracles<br/>Real-world Data"]
+    end
+
+    %% Connections: App Integration to Service Layer
+    SocialAPI --> NLP
+    SocialAPI --> Vision
+    ComputeAPI --> Analytics
+    ComputeAPI --> Reasoning
+    GovAPI --> Reasoning
+    GovAPI --> Analytics
+    MarketAPI --> Analytics
+    MarketAPI --> Recommend
+
+    SDK --> NLP
+    SDK --> Vision
+    SDK --> Analytics
+    CLI --> ModelMgmt
+    CLI --> DataMgmt
+
+    %% Connections: Service Layer to Core
+    TextGen --> ModelMgmt
+    TextGen --> Compute
+    Translation --> ModelMgmt
+    ImgClass --> ModelMgmt
+    ImgGen --> Compute
+    Predict --> DataMgmt
+    Predict --> Compute
+    Anomaly --> Security
+    Anomaly --> Monitor
+    Recommend --> DataMgmt
+    Planning --> Compute
+    DecSupport --> DataMgmt
+    KnowGraph --> DataMgmt
+
+    %% Connections: Core to External
+    Registry --> Blockchain
+    Deployment --> Blockchain
+    Ingest --> IPFS
+    Quality --> IPFS
+    Privacy --> Encrypt
+    GPUPool --> Monitor
+    Scheduler --> Monitor
+    AuthZ --> Blockchain
+    Audit --> Blockchain
+
+    %% Cross-tier integrations
+    Deployment -.->|Deploy| TextGen
+    Deployment -.->|Deploy| ImgGen
+    Monitor -.->|Metrics| Analytics
+    Security -.->|Protect| AppAPIs
+
+    %% Styling
+    classDef appStyle fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#fff
+    classDef serviceStyle fill:#0891b2,stroke:#06b6d4,stroke-width:2px,color:#fff
+    classDef coreStyle fill:#0e7490,stroke:#14b8a6,stroke-width:2px,color:#fff
+    classDef externalStyle fill:#065f46,stroke:#10b981,stroke-width:2px,color:#fff
+
+    class SocialAPI,ComputeAPI,GovAPI,MarketAPI,SDK,CLI,Docs appStyle
+    class TextGen,Translation,Sentiment,ImgClass,ImgGen,ImgSeg,Predict,Anomaly,Recommend,Planning,DecSupport,KnowGraph serviceStyle
+    class Registry,Training,Deployment,Ingest,Quality,Privacy,GPUPool,Scheduler,Monitor,AuthZ,Audit,Encrypt coreStyle
+    class Blockchain,IPFS,Oracle externalStyle

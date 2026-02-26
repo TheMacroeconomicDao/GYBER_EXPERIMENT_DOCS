@@ -1306,8 +1306,8 @@ Sections 1–3 laid the theoretical foundation: identified the problem, formulat
                                       │ data layer
                         ┌─────────────▼────────────────┐
                         │           IPFS               │
-                        │  (Distributed File Storage)   │
-                        │  + Community Pinning Nodes     │
+                        │  (Distributed File Storage)  │
+                        │  + Community Pinning Nodes   │
                         └──────────────────────────────┘
 ```
 

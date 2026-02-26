@@ -1,5 +1,5 @@
 # Internal documentation - not for public access
-docs/
+/docs/
 
 # Archive - not for public access
 archive/
@@ -19,6 +19,9 @@ node_modules/
 __pycache__/
 *.pyc
 *.pyo
+
+# MkDocs build output
+_build/
 
 # Temporary files
 *.log

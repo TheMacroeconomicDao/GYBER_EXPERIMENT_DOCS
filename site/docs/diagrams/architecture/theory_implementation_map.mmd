@@ -1,0 +1,53 @@
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#1e3a8a','primaryTextColor':'#fff','primaryBorderColor':'#3b82f6','lineColor':'#06b6d4','secondaryColor':'#0891b2','tertiaryColor':'#0e7490','fontSize':'14px'}}}%%
+graph LR
+    %% Theory Side
+    subgraph Theory["<b>Theoretical Constructs</b><br/><i>CyberSocium Framework</i>"]
+        direction TB
+        T1["<b>CyberSocium CS</b><br/>Core Ecosystem Concept"]
+        T2["<b>CyberSocial Corporation CSC</b><br/>Organizational Form"]
+        T3["<b>Axiom A1</b><br/>Decentralization Principle"]
+        T4["<b>Axiom A2</b><br/>Transparency Principle"]
+        T5["<b>Axiom A3</b><br/>Data Sovereignty Principle"]
+        T6["<b>Axiom A5</b><br/>Compensation Transparency"]
+        T7["<b>Axiom A8</b><br/>AI Augmentation"]
+        T8["<b>PMIP Principle</b><br/>Millions are Billions"]
+        T9["<b>SES Mechanism</b><br/>Socioeconomic Selection"]
+        T10["<b>IPI Pipeline</b><br/>Idea-Project-Implementation"]
+        T11["<b>Omega Ω Metrics</b><br/>D, T, A, S, C Dimensions"]
+    end
+
+    %% Implementation Side
+    subgraph Implementation["<b>Technical Implementation</b><br/><i>GyberExperiment Platform</i>"]
+        direction TB
+        I1["<b>GyberExperiment</b><br/>Living Ecosystem"]
+        I2["<b>Gybernaty Community</b><br/>Verified Participants NFC"]
+        I3["<b>GyberNet Blockchain</b><br/>BSC-based Infrastructure"]
+        I4["<b>Blockchain Registry</b><br/>Immutable Transaction Log"]
+        I5["<b>Client Encryption + IPFS</b><br/>Distributed Storage"]
+        I6["<b>UnitManager Protocol</b><br/>Status-based Rewards"]
+        I7["<b>AI Integration Layer</b><br/>GPT-4, Claude, Gemini"]
+        I8["<b>Economic + Commerce DAO</b><br/>Capital Coordination"]
+        I9["<b>IPI Pipeline + SIC</b><br/>Project Lifecycle Management"]
+        I10["<b>Governance + Projects</b><br/>Real-time Implementation"]
+        I11["<b>On-chain Metrics</b><br/>Verifiable KPIs"]
+    end
+
+    %% Bidirectional Mappings
+    T1 <-->|implements| I1
+    T2 <-->|realizes as| I2
+    T3 <-->|enforced by| I3
+    T4 <-->|achieved via| I4
+    T5 <-->|protected through| I5
+    T6 <-->|enabled by| I6
+    T7 <-->|deployed in| I7
+    T8 <-->|operationalized in| I8
+    T9 <-->|executed through| I9
+    T10 <-->|managed by| I10
+    T11 <-->|measured in| I11
+
+    %% Styling
+    classDef theoryStyle fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#fff,font-size:12px
+    classDef implStyle fill:#0891b2,stroke:#06b6d4,stroke-width:2px,color:#fff,font-size:12px
+
+    class T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11 theoryStyle
+    class I1,I2,I3,I4,I5,I6,I7,I8,I9,I10,I11 implStyle
