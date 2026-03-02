@@ -1,28 +1,40 @@
-# Internal documentation - not for public access
+# === Private / Sensitive (keep local, never push) ===
+
+# Legal documents (DUNA agreement, briefs)
+/legal/
+
+# Smart contracts (private until audit)
+/contracts/
+
+# Internal documentation
 /docs/
 
-# Archive - not for public access
-archive/
+# Archive
+/archive/
 
-# System files
+# === System / IDE ===
 .DS_Store
 .claude/
-
-# IDE
 .vscode/
 .idea/
 
-# Node modules
-node_modules/
+# === Build artifacts ===
+_build/
+site/
+source/
+scripts/
+translation_parts/
+*.html
 
-# Python
+# === Dependencies ===
+node_modules/
 __pycache__/
 *.pyc
 *.pyo
 
-# MkDocs build output
-_build/
-
-# Temporary files
+# === Temporary ===
 *.log
 *.tmp
+*.css
+mkdocs.yml
+requirements.txt
