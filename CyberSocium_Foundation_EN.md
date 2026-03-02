@@ -1,6 +1,6 @@
 
 
-# CyberSocium: Theoretical Foundations of Cybersocial Economics and the Architecture of a Decentralised Socio-Economic Formation
+# CyberSocium: Theoretical Foundations of Cybersocial Economics and the Architecture of a Decentralised Socio-Economic Form
 
 ## Foundational Article and Technical Specification of GyberExperiment
 
