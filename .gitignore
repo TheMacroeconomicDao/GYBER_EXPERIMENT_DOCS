@@ -25,6 +25,7 @@ source/
 scripts/
 translation_parts/
 *.html
+!CyberSocium_Foundation_*.html
 
 # === Dependencies ===
 node_modules/
