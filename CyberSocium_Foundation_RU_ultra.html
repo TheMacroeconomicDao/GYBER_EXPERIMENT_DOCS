@@ -11210,19 +11210,8 @@ CyberSocium — зависимости между аксиомами, механ
                 }
 
                 if (target) {
-                    const y = target.getBoundingClientRect().top + window.pageYOffset - 60;
+                    const y = target.getBoundingClientRect().top + window.pageYOffset - 80;
                     window.scrollTo({ top: y, behavior: 'smooth' });
-
-                    // Close sidebar after navigation
-                    const sidebar = document.getElementById('navSidebar');
-                    const toggleBtn = document.querySelector('.nav-toggle');
-                    const span = toggleBtn.querySelector('span');
-                    if (sidebar.classList.contains('active')) {
-                        sidebar.classList.remove('active');
-                        document.getElementById('mainContent').classList.remove('with-nav');
-                        toggleBtn.classList.remove('open');
-                        span.textContent = '☰';
-                    }
                 } else {
                     console.warn('Target not found for href:', href);
                 }
