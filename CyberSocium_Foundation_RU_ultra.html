@@ -11176,16 +11176,43 @@ CyberSocium — зависимости между аксиомами, механ
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const href = this.getAttribute('href');
-                const targetId = href.substring(1);
+                let targetId = href.substring(1);
 
-                // Direct getElementById - works with Cyrillic IDs directly
-                let target = document.getElementById(targetId);
+                // Try multiple methods to find the target
+                let target = null;
+
+                // Method 1: Direct getElementById (works for ASCII IDs like "3.5", "5", etc.)
+                target = document.getElementById(targetId);
+
+                // Method 2: Decode URI component for Cyrillic IDs
+                if (!target) {
+                    try {
+                        const decodedId = decodeURIComponent(targetId);
+                        target = document.getElementById(decodedId);
+                    } catch (err) {
+                        // Ignore decode errors
+                    }
+                }
+
+                // Method 3: querySelector with CSS.escape for special characters
+                if (!target) {
+                    try {
+                        target = document.querySelector('[id="' + CSS.escape(targetId) + '"]');
+                    } catch (err) {
+                        // Fallback to unescaped
+                        try {
+                            target = document.querySelector('[id="' + targetId + '"]');
+                        } catch (err) {
+                            // Ignore errors
+                        }
+                    }
+                }
 
                 if (target) {
                     const y = target.getBoundingClientRect().top + window.pageYOffset - 60;
                     window.scrollTo({ top: y, behavior: 'smooth' });
 
-                    // Close sidebar on mobile after navigation
+                    // Close sidebar after navigation
                     const sidebar = document.getElementById('navSidebar');
                     const toggleBtn = document.querySelector('.nav-toggle');
                     const span = toggleBtn.querySelector('span');
@@ -11196,9 +11223,7 @@ CyberSocium — зависимости между аксиомами, механ
                         span.textContent = '☰';
                     }
                 } else {
-                    console.log('Target ID:', targetId);
-                    console.log('Element not found. Available IDs:',
-                        Array.from(document.querySelectorAll('[id]')).map(el => el.id).filter(id => id.includes('введение') || id.includes('обзор') || id.includes('теория')));
+                    console.warn('Target not found for href:', href);
                 }
             });
         });
