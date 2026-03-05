@@ -522,7 +522,7 @@
         <div class="nav-title">Содержание</div>
         <ul class="nav-list" id="navList">
             <li><a href="#введение-постановка-проблемы" class="section">1. Введение</a></li>
-            <li><a href="#эра-суперкоммуникаций-контекст-и-масштаб" class="subsection">1.1 Эра суперкоммуникаций</a></li>
+            <li><a href="#era1" class="subsection">1.1 Эра суперкоммуникаций</a></li>
             <li><a href="#кризис-существующих-социально-экономических-институтов" class="subsection">1.2 Кризис институтов</a></li>
             <li><a href="#a.-структура-документа" class="subsubsection">1.2a Структура документа</a></li>
             <li><a href="#децентрализация-и-open-source-как-историческая-тенденция" class="subsection">1.4 Децентрализация</a></li>
@@ -652,7 +652,7 @@ Commons Attribution-NonCommercial 4.0 International / GPL-v3 (кодовая
 <ol type="1">
 <li>Введение: Постановка проблемы
 <ul>
-<li>1.1. Эра суперкоммуникаций: контекст и масштаб</li>
+<li>1.1. 111 Эра суперкоммуникаций: контекст и масштаб</li>
 <li>1.2. Кризис существующих социально-экономических институтов</li>
 <li>1.2a. Структура документа</li>
 <li>1.3. Информационная безопасность, этика и собственность на
@@ -780,7 +780,7 @@ Commons Attribution-NonCommercial 4.0 International / GPL-v3 (кодовая
 <hr />
 <h2 id="введение-постановка-проблемы">1. Введение: Постановка
 проблемы</h2>
-<h3 id="эра-суперкоммуникаций-контекст-и-масштаб">1.1. Эра
+<h3 id="era1">1.1. Эра
 суперкоммуникаций: контекст и масштаб</h3>
 <p>Более пяти миллиардов человек на планете Земля носят в карманах
 вычислительные устройства, совокупная мощность которых на порядки
@@ -11107,7 +11107,7 @@ CyberSocium — зависимости между аксиомами, механ
                 const text = h.textContent.trim();
                 // Match patterns like "1.", "1.1.", "1.2a.", "4.6.5." etc.
                 const match = text.match(/^(\d+(?:\.\d+)*[a-z]?)[\.\s]/);
-                if (match) {
+                if (match && !h.id) {
                     const simpleId = match[1];
                     h.setAttribute('id', simpleId);
                 }
@@ -11115,6 +11115,7 @@ CyberSocium — зависимости между аксиомами, механ
             // Also handle appendix headings
             headings.forEach(function(h) {
                 const text = h.textContent.trim();
+                if (h.id) return;
                 if (/^Приложение\s+([A-Z])\./.test(text)) {
                     const letter = text.match(/^Приложение\s+([A-Z])\./)[1];
                     h.setAttribute('id', 'appendix-' + letter);
