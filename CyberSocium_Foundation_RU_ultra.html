@@ -522,11 +522,32 @@
         <div class="nav-title">Содержание</div>
         <ul class="nav-list" id="navList">
             <li><a href="#введение-постановка-проблемы" class="section">1. Введение</a></li>
+            <li><a href="#эра-суперкоммуникаций-контекст-и-масштаб" class="subsection">1.1 Эра суперкоммуникаций</a></li>
+            <li><a href="#кризис-существующих-социально-экономических-институтов" class="subsection">1.2 Кризис институтов</a></li>
+            <li><a href="#a.-структура-документа" class="subsubsection">1.2a Структура документа</a></li>
+            <li><a href="#децентрализация-и-open-source-как-историческая-тенденция" class="subsection">1.4 Децентрализация</a></li>
+            <li><a href="#эволюция-систем-управления-экономическими-процессами" class="subsection">1.5 Эволюция управления</a></li>
+            <li><a href="#методология" class="subsection">1.6 Методология</a></li>
             <li><a href="#обзор-литературы-и-междисциплинарный-контекст" class="section">2. Обзор литературы</a></li>
+            <li><a href="#политическая-экономия-цифровой-эпохи" class="subsection">2.1 Политическая экономия</a></li>
+            <li><a href="#теория-общих-ресурсов-и-коллективного-действия" class="subsection">2.2 Теория общих ресурсов</a></li>
+            <li><a href="#теория-механизмов-и-механизм-дизайн" class="subsection">2.3 Теория механизмов</a></li>
+            <li><a href="#кибернетика-и-теория-сложных-адаптивных-систем" class="subsection">2.4 Кибернетика и CAS</a></li>
+            <li><a href="#синтез-незаполненная-ниша-и-позиционирование-cybersocium" class="subsection">2.6 Позиционирование CyberSocium</a></li>
             <li><a href="#теория-cybersocium" class="section">3. Теория CyberSocium</a></li>
+            <li><a href="#аксиоматическое-основание" class="subsection">3.1 Аксиоматическое основание</a></li>
+            <li><a href="#киберсоциальная-корпорация-определение-и-свойства" class="subsection">3.2 Киберсоциальная корпорация</a></li>
+            <li><a href="#концепция-pmip-и-механизм-социально-экономического-отбора" class="subsection">3.4 Концепция PMIP</a></li>
             <li><a href="#3.5" class="subsection">3.5 Социально-экономический отбор</a></li>
             <li><a href="#3.6" class="subsection">3.6 Формальная модель CAS</a></li>
             <li><a href="#архитектура-gyberexperiment-техническая-спецификация" class="section">4. Архитектура GyberExperiment</a></li>
+            <li><a href="#от-теории-к-реализации-картография-соответствий" class="subsection">4.1 Картография соответствий</a></li>
+            <li><a href="#gybercommunitytoken-gbr-токеномика" class="subsection">4.2 GBR токеномика</a></li>
+            <li><a href="#decentralised-social-platform-dsp-архитектура" class="subsection">4.3 DSP архитектура</a></li>
+            <li><a href="#gybernet-блокчейн-сообщества" class="subsection">4.4 GyberNet</a></li>
+            <li><a href="#gybercomputer-распределённые-вычисления" class="subsection">4.5 GyberComputer</a></li>
+            <li><a href="#macroeconomicdao-система-управления" class="subsection">4.6 MacroeconomicDAO</a></li>
+            <li><a href="#юридическая-обвязка-gybernaty-duna" class="subsection">4.7 DUNA юридическая обвязка</a></li>
             <li><a href="#4.8" class="subsection">4.8 AiC Департамент AI</a></li>
             <li><a href="#5" class="section">5. Таксономия DAO</a></li>
             <li><a href="#5.1" class="subsection">5.1 Social DAO</a></li>
@@ -11155,26 +11176,10 @@ CyberSocium — зависимости между аксиомами, механ
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const href = this.getAttribute('href');
+                const targetId = href.substring(1);
 
-                // Decode the href to handle Cyrillic characters
-                let targetId;
-                try {
-                    targetId = decodeURIComponent(href.substring(1));
-                } catch (err) {
-                    targetId = href.substring(1);
-                }
-
-                // Try to find element by ID
+                // Direct getElementById - works with Cyrillic IDs directly
                 let target = document.getElementById(targetId);
-
-                // Fallback to querySelector with escaped ID
-                if (!target) {
-                    try {
-                        target = document.querySelector('[id="' + targetId + '"]');
-                    } catch (err) {
-                        // Ignore query errors
-                    }
-                }
 
                 if (target) {
                     const y = target.getBoundingClientRect().top + window.pageYOffset - 60;
@@ -11191,7 +11196,9 @@ CyberSocium — зависимости между аксиомами, механ
                         span.textContent = '☰';
                     }
                 } else {
-                    console.warn('Target not found:', targetId);
+                    console.log('Target ID:', targetId);
+                    console.log('Element not found. Available IDs:',
+                        Array.from(document.querySelectorAll('[id]')).map(el => el.id).filter(id => id.includes('введение') || id.includes('обзор') || id.includes('теория')));
                 }
             });
         });
