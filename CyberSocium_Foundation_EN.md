@@ -81,7 +81,7 @@ The theory of CyberSocium describes the regularities of the **cybersocialisation
    - 6.2. GyberNet — Decentralised Network
    - 6.3. GyberComputer — Distributed Computing Network
    - 6.4. G-Plan — Task Management System
-   - 6.5. LQD, SAPP, PowerSwapMeta, Contact — Auxiliary Projects
+    - 6.5. Sapp — DSP Private Messenger Module
    - 6.6. Portfolio Validation and Ecosystem Integration
    - 6.7. Deployment Architecture and Integration Testing
    - 6.8. Open Development Model and Community Governance
@@ -1013,7 +1013,7 @@ Each axiom is formulated, justified through references to existing theoretical t
 
 *Justification:* The principle of permissionless innovation, realized in Ethereum and demonstrated in practice (thousands of independent applications on a single platform). Modular architecture as a property of complex adaptive systems [11].
 
-*Implementation:* Modular DSP architecture, open APIs, SAPP (extension standard), permissionless participation in the ecosystem.
+*Implementation:* Modular DSP architecture, open APIs, DSP Module Registry (extension standard), Sapp as private messenger module, permissionless participation in the ecosystem.
 
 **Axiom 5 (Meritocratic Fairness).** A participant's reward is determined by their contribution to the system, verifiable through objective mechanisms, rather than by hierarchical position or the volume of capital.
 
@@ -2790,7 +2790,7 @@ Every theoretical construct introduced in Sections 1–3 must have an explicit, 
 | A1 (Decentralisation) | Absence of a single point of control | UUPS proxy + Gnosis Safe (M-of-N) + Timelock | `UnitManager.sol`, `Governor.sol` | Gnosis Safe: ≥3-of-5 signers |
 | A2 (Transparency) | All economic decisions on-chain | BSC → GyberNet: all votes, transactions, statuses recorded on blockchain | `Governor.sol`, BSC explorer | Verification via Etherscan/BscScan |
 | A3 (Data sovereignty) | User = sole data owner | 3-layer encryption in DSP; DID standard; Verifiable Credentials | DSP encryption layer, DDP (IPFS) | Proof: server has no decryption keys |
-| A4 (Extensibility) | Unlimited modularity | SAPP standard (Socio-App Protocol Package); Plugin API in DSP | DSP Module Registry | Any participant may publish a module |
+| A4 (Extensibility) | Unlimited modularity | DSP Module Registry; Plugin API in DSP; Sapp as messaging module | DSP Module Registry | Any participant may publish a module |
 | A5 (Meritocratic fairness) | Weight proportional to contribution | Hybrid Voting Power: VP = √(GBR_staked) × ActivityMultiplier × StatusBonus | `GBRVotingWrapper.sol` | Activity Score 0–100, transparent formula |
 | A6 (Inclusivity) | Minimal entry threshold | UnitManager: free registration; PMIP: individual_cost → 0 | `UnitManager.sol` | MemberStatus.Unit = base level |
 | A7 (Self-governance) | All rules modifiable through DAO | OpenZeppelin Governor + TimelockController | `Governor.sol`, `TimelockController.sol` | 4 DAO classes with parameters |
@@ -3190,7 +3190,7 @@ For each project pⱼ transitioning to the Operation state:
    token liquidity and value.
 ```
 
-To prevent liquidity fragmentation at ecosystem scale, minimum liquidity thresholds for each pool are prescribed, determined by Commerce DAO voting, as well as an aggregation mechanism through PowerSwapMeta (Section 6.5).
+To prevent liquidity fragmentation at ecosystem scale, minimum liquidity thresholds for each pool are prescribed, determined by Commerce DAO voting.
 
 #### 4.2.5. Liquidity Pool: Architecture and Management
 
@@ -5340,11 +5340,7 @@ Full Commerce DAO project cycle:
 
 **Examples of typical Commerce DAO projects:**
 
-- **LQD (Liquidity Deployer):** Automated deployment of liquidity pools. Budget: ~15,000 GBR. SIC: ~200 participants. AG: 5 developers + 2 analysts. Implementation period: 6 months. Revenue model: 0.1% fee on deployed liquidity.
-
-- **SAPP (Social Application Protocol Platform):** SDK for developers of decentralised applications on top of DSP. Budget: ~50,000 GBR. SIC: ~500 participants. AG: 12 developers + 3 designers. Period: 12 months. Revenue model: application marketplace (5% commission on sales).
-
-- **PowerSwapMeta:** DEX aggregator with meta-transactions. Budget: ~30,000 GBR. SIC: ~300 participants. AG: 8 developers. Period: 9 months. Revenue model: 0.05% of exchange volume.
+- **Sapp (DSP Private Messenger):** DSP module for private community messaging with end-to-end encryption. Budget: ~50,000 GBR. SIC: ~500 participants. AG: 12 developers + 3 designers. Period: 12 months. Revenue model: premium features (additional encryption options, extended storage).
 
 ### 5.4 Economic DAO
 
@@ -5851,12 +5847,12 @@ DSP Modular Architecture:
       (project recommendations,
       personalised feed)
 
-  Extension standard (SAPP):
+  DSP Modules standard:
     — API: REST + GraphQL + WebSocket
     — Authentication: OAuth 2.0 + DID Auth
-    — Publication: SAPP Registry (on-chain)
-    — Monetisation: via internal tokens
-      or subscriptions
+    — Publication: DSP Module Registry (on-chain)
+    — Example module: Sapp — private messenger
+      with end-to-end encryption
     — Review: Code DAO checks security
       before publication in DSP-Marketplace
 ```
@@ -6141,240 +6137,100 @@ G-Plan Functions:
       is made by Social DAO
 ```
 
-### 6.5 LQD, SAPP, PowerSwapMeta, Contact — Auxiliary Ecosystem Projects
+### 6.5 Sapp — DSP Private Messenger Module
 
-In addition to the core platform components, the GyberExperiment ecosystem includes a number of applied projects implemented or being implemented through the IPI model:
+In addition to core platform components, the GyberExperiment ecosystem includes application modules that implement key functions of the decentralised social platform.
 
-#### 6.5.1. LQD (Liquidity Deployer)
+#### Sapp (DSP Module)
 
-LQD is an automated platform for the deployment and management of liquidity pools for ecosystem project tokens. LQD is a critical infrastructure component enabling IPI-model projects to transition from the Accumulation phase to the Implementation phase.
+Sapp is the standard messaging module of DSP, integrated into the platform as the core functionality of the decentralised social network. Sapp implements Axiom A3 (data sovereignty) and Axiom A4 (extensibility), providing private community communication using a hybrid decentralised infrastructure.
 
-```
-LQD Architecture:
-
-  Components:
-    — Pool Factory: smart contract for creating
-      liquidity pools (GBR/project_token,
-      project_token/USDT)
-    — LP Strategy Engine: algorithm for determining
-      optimal pool parameters
-      (initial price, depth, fee tier)
-    — LP Burn Module: mechanism for burning LP tokens
-      as proof-of-commitment upon project initiation
-    — LP Lock Manager: temporary locking of LP tokens
-      to prevent rug-pull
-    — Analytics Dashboard: monitoring of TVL, volumes,
-      impermanent losses
-
-  Integrations:
-    — DEX: PancakeSwap V3, Uniswap V3 (via bridges)
-    — Chainlink: price oracles for determining
-      initial parameters
-    — Commerce DAO: approval of parameters for large pools
-
-  Deployment parameters (configurable via Commerce DAO):
-    — Minimum LP Burn: 0.1% of C(p) in GBR
-    — LP Lock period: 180 days (default)
-    — Fee tier: 0.3% (standard), 1% (volatile tokens)
-    — Initial liquidity: ≥$1,000 (in GBR equivalent)
-
-  Economic model:
-    — Fee: 0.1% of each deployment (→ Governance Pool)
-    — LP incentivisation: additional GBR rewards for
-      liquidity providers in the first 90 days
-    — Buyback & Burn: 2% of fee revenue → purchase
-      and burn of GBR
-
-  AI integration (AiC Circuit 1):
-    — Predictive pricing: AI analyses market data
-      and recommends the initial token price
-    — Impermanent loss forecasting: warning to LP
-      of potential losses under various scenarios
-    — Liquidity optimisation: automatic rebalancing
-      of positions (Uniswap V3 concentrated liquidity)
-```
-
-LQD is the first Commerce DAO project to have completed the full IPI cycle: from idea (proposal for LP deployment automation) through SIC formation (~200 participants), accumulation (~15,000 GBR), implementation (6 months, AG = 5 developers + 2 analysts) to operation. Revenue model: 0.1% fee on deployed liquidity; projected annual revenue at TVL $10M = $10,000 in GBR equivalent.
-
-#### 6.5.2. SAPP (Social Application Protocol Platform)
-
-SAPP is a standardised platform and SDK for the creation of decentralised social applications (dApps) on top of DSP. SAPP implements Axiom A4 (extensibility): any developer may create a DSP extension without permission from a central authority.
+Unlike external messengers, Sapp is a native DSP component — it uses the unified data protocol, common identity model (DID) and cryptographic keys, allowing messages to exist in the same ecosystem as social content without external integrations.
 
 ```
-SAPP Stack:
+Sapp Architecture:
 
-  SAPP Module = {
-    manifest.json:     — module metadata (name, version, author,
-                         dependencies, required permissions)
-    src/:              — module source code (React + TypeScript)
-    api-contract.ts:   — typed API contract
-                         (what the module provides to DSP)
-    permissions.json:  — requested permissions
-                         (user data, network, storage)
-    tests/:            — automated tests
-    audit.sbt:         — AI audit soulbound token (after passing)
-  }
+  Infrastructure Layer (Decentralized Data Platform):
+    — DDP (Decentralized Data Platform): hybrid data management
+      platform combining blockchain and IPFS
+    — IPFS: decentralised storage of encrypted
+      messages and media files
+    — Blockchain layer: immutable metadata, access rights,
+      authorship verification, economics
 
-  Publication process:
-    1. Developer creates a SAPP module
-    2. AI Code Reviewer checks the code (vulnerabilities, compliance)
-    3. Code DAO peer review (≥2 approvals from Dev+)
-    4. Commerce DAO approves the business model
-    5. Publication in SAPP Marketplace
-    6. DSP users install the module (opt-in)
+  Cryptographic Layer:
+    — E2E Encryption: Signal Protocol for end-to-end encryption
+    — Hybrid encryption: symmetric (for data) +
+      asymmetric (for recipient keys)
+    — Streaming and chunk encryption for large files
+    — ZK-proofs: authorship verification without identity disclosure
 
-  Marketplace:
-    — Catalogue of approved SAPP modules
-    — Ratings and reviews (verified installations)
-    — Three categories: free, freemium, paid
-    — Monetisation: developer receives 85% of revenue,
-      10% → Governance Pool, 5% → AiC fund
-    — Internal application tokens: each SAPP
-      may issue its own token via LQD
+  Sapp Components:
+    — Message Registry: smart contract for registering
+      messages, storing CIDs, metadata and ACL
+    — ACL Contract: access rights management,
+      encrypted keys for participants
+    — Group Channels: secure group chats
+      with end-to-end encryption
+    — Media Handler: secure media file transfer
+      via IPFS
+    — Message Verification: authorship verification
+      via digital signatures
 
-  Examples of SAPP modules:
-    — GyberNotes: decentralised note-taking system
-      with encryption (DDP + E2E)
-    — GyberPolls: advanced polls with QV/CV mechanisms
-    — GyberAnalytics: AI analytics of community activity
-    — GyberBounty: bug bounty programme management
-    — GyberLearn: educational platform with certificates (VC)
+  Data Model:
+    — Each message is an encrypted object in IPFS
+    — CID (Content Identifier) is stored on blockchain
+    — Metadata: sender, recipient, timestamp,
+      hash, version, access policy
+    — Versioning: chain of references previous → new
+
+  Privacy:
+    — Server (DDP node) has no access to content
+    — Minimal metadata on blockchain
+    — Self-destructing messages: optional automatic
+      deletion on timer
+    — User controls keys and access policies
 ```
 
-SAPP as a Commerce DAO project: budget ~50,000 GBR, SIC ~500 participants, AG = 12 developers + 3 designers, implementation period 12 months. Revenue model: application marketplace with 15% commission on sales.
+**DDP Integration:**
 
-#### 6.5.3. PowerSwapMeta
-
-PowerSwapMeta is a DEX aggregator with meta-transaction support that optimises token exchange within the GyberExperiment ecosystem. The core innovation: users do not pay for gas directly — the fee is paid from the GBR liquidity pool, which lowers the barrier to entry (A6, inclusivity).
-
-```
-PowerSwapMeta Architecture:
-
-  Components:
-    — Route Optimizer: algorithm for finding the optimal
-      exchange route across multiple pools
-      (split routes, multi-hop)
-    — Meta-Transaction Relayer: EIP-2771-compatible
-      relayer paying gas on behalf of the user
-    — Cross-Chain Bridge: secure exchange between
-      BSC ↔ Ethereum ↔ Polygon
-      (lock-mint with M-of-N threshold signatures)
-    — Gas Station Network: GBR pool for gas payment
-      (replenished from fees)
-
-  Meta-transactions:
-    1. User signs exchange intent (off-chain)
-    2. Relayer pays gas from Gas Station Pool
-    3. Exchange is executed on-chain
-    4. Fee (0.05% of volume) covers gas + profit
-
-  AI Route Optimizer (AiC Circuit 3):
-    — ML model predicts the optimal route
-      based on current liquidity, volatility,
-      gas price, and historical patterns
-    — Slippage prediction: AI warns
-      of potential slippage before execution
-    — MEV protection: detection of sandwich attacks
-      and front-running, automatic selection
-      of a protected route (private mempool)
-
-  Supported pools:
-    — PancakeSwap V2/V3 (BSC)
-    — Uniswap V2/V3 (Ethereum, Polygon)
-    — SushiSwap (multichain)
-    — Ecosystem project pools (via LQD)
-```
-
-PowerSwapMeta as a Commerce DAO project: budget ~30,000 GBR, SIC ~300 participants, AG = 8 developers, period 9 months. Revenue model: 0.05% of exchange volume; projected annual revenue at $100M volume = $50,000 in GBR equivalent.
-
-#### 6.5.4. Contact
-
-Contact is a decentralised identity and contact management system for ecosystem participants. Contact implements Axiom A3 (data sovereignty) for the domain of digital identity: the user exercises full control over their identity and chooses what data to disclose.
+Sapp uses the Decentralized Data Platform as the base infrastructure for all storage and message delivery operations. The hybrid DDP architecture ensures:
+- Storage of encrypted messages in IPFS with content-addressing (Content-addressed)
+- Integrity verification via cryptographic hashes
+- Access control via smart contract ACL
+- Monetisation via optional premium features
 
 ```
-Contact Architecture:
+Use Cases:
 
-  DID (Decentralized Identifier):
-    — Format: did:gybernaty:<wallet_address>
-    — Storage: on-chain (GyberNet registry)
-    — Control: only the wallet owner may
-      update/revoke the DID
+  1. Private messages:
+     — Sender encrypts message for recipient
+     — Encrypted object → IPFS → CID → blockchain
+     — Recipient decrypts with their private key
 
-  Verifiable Credentials (VC):
-    — MemberStatus VC: confirmation of current status
-      (issued by UnitManager, signed on-chain)
-    — Skill VC: confirmation of competencies
-      (issued by Code DAO after peer review)
-    — Project VC: confirmation of project participation
-      (issued by G-Plan upon milestone completion)
-    — AI Audit VC: confirmation of AI audit passage
-      (issued by AiC, soulbound)
+  2. Group chats:
+     — Single symmetric key for the group
+     — Key encrypted for each participant asymmetrically
+     — New members receive key via ACL Contract
 
-  Zero-Knowledge Proofs:
-    — ZK-proof of membership: proof that
-      "I am an NFC participant with status ≥ Dev"
-      without disclosing wallet or name
-    — ZK-proof of activity: proof that
-      "my Activity Score ≥ 60"
-      without disclosing the exact value
-    — ZK-proof of age: proof that
-      "I have been a participant for more than 6 months"
-      without disclosing the registration date
-    — Technology: Semaphore (ZK-SNARK group membership)
+  3. Media files:
+     — Streaming encryption, chunking into pieces
+     — Similar delivery mechanism via IPFS
+     — Thumbnails and metadata separate from content
 
-  Portable identity:
-    — One DID for all ecosystem projects
-    — Cross-platform: DSP, SAPP modules, GyberNet, external dApps
-    — Selective disclosure: the user chooses
-      which VC to present for each interaction
-    — Revocation: the user may revoke
-      any issued VCs at any time
-
-  AI integration:
-    — Sybil detection: GNN analyses the identity graph,
-      identifying clusters of fake accounts
-    — Anomaly detection: detection of suspicious
-      patterns (mass registration, coordinated
-      activity, wash trading)
-    — Reputation scoring: AI aggregates VC, Activity Score,
-      voting history to form
-      a comprehensive reputation score
+  4. Verification:
+     — Digital signature of sender
+     — ZK-proof for anonymous authorship confirmation
+     — Anti-spam via reputation on blockchain
 ```
 
-Contact as a Commerce DAO project: budget ~20,000 GBR, SIC ~250 participants, AG = 6 developers + 2 cryptographers, period 8 months. Revenue model: basic DID free, advanced VC services (enterprise verification, cross-chain bridging) — paid.
+**Technical Integration:**
 
-#### 6.5.5. Interrelationship of Auxiliary Projects
-
-The four auxiliary projects form an integrated infrastructure stack in which each component reinforces the others:
-
-```
-Integration matrix of auxiliary projects:
-
-  LQD ←→ PowerSwapMeta:
-    — LQD creates pools, PowerSwapMeta aggregates them
-    — PowerSwapMeta routes traffic to LQD pools
-    — Shared AI Route Optimizer optimises both
-
-  SAPP ←→ Contact:
-    — SAPP modules use Contact DID for authorisation
-    — Contact provides VC for SAPP permissions
-    — ZK-proofs ensure privacy in SAPP
-
-  LQD ←→ Contact:
-    — Contact DID identifies LP providers
-    — Activity VC from LP → Activity Score increase
-
-  SAPP ←→ PowerSwapMeta:
-    — SAPP modules may embed token exchange
-    — Meta-transactions lower the barrier for SAPP
-
-  All four ←→ DSP:
-    — DSP is the operating environment for all projects
-    — Unified UX: users interact via DSP
-    — G-Plan tracks tasks of all four projects
-```
-
-The aggregate value of these four projects exceeds the sum of their individual values — a classic manifestation of the emergent property of a complex adaptive system (section 3.6, property E2). LQD without PowerSwapMeta creates pools with limited traffic; PowerSwapMeta without LQD has no project pools to aggregate; SAPP without Contact cannot provide private authorisation; Contact without SAPP has limited application. Together they form a complete "financial-social stack" for the CyberSocium ecosystem.
+- DSP Module Registry: Sapp is registered as a standard DSP module
+- Single entry point via DSP interface
+- Synchronisation with user profile via DID
+- Integration with G-Plan for task notifications
+- Open API: REST + GraphQL + WebSocket for third-party developers
 
 ### 6.6 Portfolio Validation and Ecosystem Integration
 
@@ -6416,7 +6272,7 @@ This integration ensures the realisation of all eight axioms:
 | A1 (Decentralisation) | P2P architecture of DSP, distributed GyberComputer, multisig governance |
 | A2 (Transparency) | On-chain transactions in GyberNet, open code (AGPL-3.0) |
 | A3 (Data sovereignty) | DID identification, IPFS storage, E2E encryption |
-| A4 (Extensibility) | Modular architecture, SAPP protocol, open APIs |
+| A4 (Extensibility) | Modular architecture, Sapp protocol, open APIs |
 | A5 (Meritocratic fairness) | UnitManager, G-Plan verification, reputation system |
 | A6 (Inclusivity) | PMIP (minimum participation threshold), multilingualism, cross-chain |
 | A7 (Self-governance) | Four-class DAO taxonomy, Governor contracts |
@@ -7160,7 +7016,7 @@ The GyberExperiment model proposes a radically new model for organising academic
 
 **The problem of publication pressure.** The "publish or perish" principle stimulates quantity of publications at the expense of quality, leading to a replication crisis and journal inflation. In the CyberSocium model, where contribution is measured through Activity Score and G-Plan, a researcher is rewarded for real contribution (code, data, reproducible results), not for number of publications. Verifiable Credentials issued by Code DAO provide verifiable confirmation of contribution without dependence on h-index metrics.
 
-**The model of the decentralised university.** CyberSocium enables one to envision a "decentralised university" — an educational and research organisation functioning as a CSC: students and faculty are participants in NFC; courses and research are organised as IPI projects; quality is assessed through peer review (Code DAO) and social relevance (SES); degrees and certificates are Verifiable Credentials on the blockchain. The SAPP module GyberLearn (Section 6.5.2) is the first step towards realising this model.
+**The model of the decentralised university.** CyberSocium enables one to envision a "decentralised university" — an educational and research organisation functioning as a CSC: students and faculty are participants in NFC; courses and research are organised as IPI projects; quality is assessed through peer review (Code DAO) and social relevance (SES); degrees and certificates are Verifiable Credentials on the blockchain. The GyberLearn module (Section 6.5) is the first step towards realising this model.
 
 #### 8.2.5. Implications for Developing Countries
 
@@ -7519,7 +7375,7 @@ Priorities:
   — GyberNet testnet: test network
     with RPoS consensus and 10+ validators
   — First Commerce DAO projects:
-    LQD, SAPP, PowerSwapMeta
+    Sapp — DSP private messenger module
     — Due diligence process for each project
     — Escrow contracts with milestone voting
   — AiC: formation of research groups,
@@ -8363,7 +8219,7 @@ If this succeeds — GyberExperiment will become not simply a successful project
 | **LP Burn** | A liquidity pool burn mechanism for initiating a project: the initiator burns LP tokens (GBR/USDT), demonstrating proof-of-commitment |
 | **Buyback & Burn** | A deflationary mechanism: 2% of Commerce DAO project revenue is directed toward purchasing and burning GBR |
 | **RPoS** | Reputational Proof-of-Stake — GyberNet's modified consensus: validator_weight = √(staked_GBR) × (1 + ActivityScore/100) |
-| **SAPP** | Socio-App Protocol Package — the DSP extensions standard: code module + manifest + API contract |
+| **Sapp** | DSP module for private messenger with end-to-end encryption: E2E encryption, decentralised storage, group channels |
 | **DID** | Decentralized Identifier — a decentralized participant identifier: `did:gybernaty:<wallet_address>` |
 | **VC** | Verifiable Credentials — verifiable attestations (status, skills, participation), signed by the issuing party's digital signature |
 | **EIP-712** | An Ethereum standard for typed structured data signatures; used for activity proofs and off-chain votes |
@@ -8439,7 +8295,7 @@ A3 — DATA SOVEREIGNTY
 A4 — EXTENSIBILITY
   The system is designed for expansion
   without permission from a central authority.
-  Implementation: modular architecture, SAPP,
+  Implementation: modular architecture, Sapp,
   open APIs, permissionless participation.
 
 A5 — MERITOCRATIC FAIRNESS
@@ -9230,8 +9086,8 @@ Dependency graph (simplified):
                         ─→ DID/VC                  ─→ W3C standards
 
   A4 (Extensibility)   ─→ UUPS Proxy pattern      ─→ Upgradeable contracts
-                        ─→ SAPP modules            ─→ DSP plugin system
-                        ─→ Modular degradation     ─→ Microservices arch.
+                      ─→ DSP modules            ─→ Sapp messaging
+                      ─→ Modular degradation     ─→ Microservices arch.
 
   A5 (Merit. fairness) ─→ Hybrid VP               ─→ GBRVotingWrapper
                         ─→ MemberStatus hierarchy  ─→ UnitManager.setStatus()

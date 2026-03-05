@@ -11155,27 +11155,43 @@ CyberSocium — зависимости между аксиомами, механ
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const href = this.getAttribute('href');
-                const targetId = href.substring(1);
-                // Try direct ID first, then decode URI component for Cyrillic IDs
-                let target = document.getElementById(targetId);
-                if (!target) {
-                    try {
-                        target = document.getElementById(decodeURIComponent(targetId));
-                    } catch (err) {
-                        // Ignore decode errors
-                    }
+
+                // Decode the href to handle Cyrillic characters
+                let targetId;
+                try {
+                    targetId = decodeURIComponent(href.substring(1));
+                } catch (err) {
+                    targetId = href.substring(1);
                 }
-                // Fallback to querySelector
+
+                // Try to find element by ID
+                let target = document.getElementById(targetId);
+
+                // Fallback to querySelector with escaped ID
                 if (!target) {
                     try {
-                        target = document.querySelector(href);
+                        target = document.querySelector('[id="' + targetId + '"]');
                     } catch (err) {
                         // Ignore query errors
                     }
                 }
+
                 if (target) {
                     const y = target.getBoundingClientRect().top + window.pageYOffset - 60;
                     window.scrollTo({ top: y, behavior: 'smooth' });
+
+                    // Close sidebar on mobile after navigation
+                    const sidebar = document.getElementById('navSidebar');
+                    const toggleBtn = document.querySelector('.nav-toggle');
+                    const span = toggleBtn.querySelector('span');
+                    if (sidebar.classList.contains('active')) {
+                        sidebar.classList.remove('active');
+                        document.getElementById('mainContent').classList.remove('with-nav');
+                        toggleBtn.classList.remove('open');
+                        span.textContent = '☰';
+                    }
+                } else {
+                    console.warn('Target not found:', targetId);
                 }
             });
         });
