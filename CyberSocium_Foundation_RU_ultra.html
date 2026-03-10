@@ -183,6 +183,15 @@
             margin-left: 280px;
         }
 
+        /* Shift content when navigation is open */
+        body.nav-open header {
+            margin-left: 280px;
+        }
+
+        body.nav-open main {
+            margin-left: 280px;
+        }
+
         /* Typography */
         h1, h2, h3, h4, h5, h6 {
             color: var(--primary-color);
@@ -453,6 +462,11 @@
             }
 
             main.with-nav {
+                margin-left: 0;
+            }
+
+            body.nav-open header,
+            body.nav-open main {
                 margin-left: 0;
             }
 
@@ -11389,9 +11403,11 @@ CyberSocium — зависимости между аксиомами, механ
             const sidebar = document.getElementById('navSidebar');
             const main = document.getElementById('mainContent');
             const toggleBtn = document.querySelector('.nav-toggle');
+            const body = document.body;
             sidebar.classList.toggle('active');
             main.classList.toggle('with-nav');
             toggleBtn.classList.toggle('open');
+            body.classList.toggle('nav-open');
 
             // Update button text
             const span = toggleBtn.querySelector('span');
